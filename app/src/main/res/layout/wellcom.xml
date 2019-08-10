@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background">
+        <!--左横线-->
+        <ImageView
+            android:id="@+id/left_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/app_name"
+            android:layout_toStartOf="@id/app_name"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="92dp"
+            android:src="@drawable/lines"
+            android:layout_gravity="center"/>
+        <!--家教帮-->
+        <TextView
+            android:id="@+id/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="92dp"
+            android:layout_centerHorizontal="true"
+            android:text="@string/app_name"
+            android:textColor="@color/colorWhite"
+            android:textStyle="normal"
+            android:textSize="55sp" />
+        <!--右横线-->
+        <ImageView
+            android:id="@+id/right_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/lines"
+            android:layout_toRightOf="@+id/app_name"
+            android:layout_toEndOf="@id/app_name"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="92dp"
+            android:layout_gravity="center"/>
+        <!--版本号背景-->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="105dp"
+            android:layout_toRightOf="@id/app_name"
+            android:layout_toEndOf="@id/app_name"
+            android:background="@drawable/id_background" />
+            <!--版本号文本-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="104dp"
+            android:text=" 1.0"
+            android:layout_toRightOf="@id/app_name"
+            android:layout_toEndOf="@id/app_name"
+            android:textColor="@color/colorMainBlue" />
+</RelativeLayout>
