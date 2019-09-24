@@ -26,7 +26,9 @@ public class MyEditText extends AppCompatEditText {
     protected void onSelectionChanged(int selStart, int selEnd) {
         super.onSelectionChanged(selStart, selEnd);
         //把光标位置固定在最末
-        this.setSelection(this.getText().length());
+        if (getText() != null){
+            this.setSelection(this.getText().length());//2019.9.24改动（加了这个if条件）
+        }
     }
 
     @Override

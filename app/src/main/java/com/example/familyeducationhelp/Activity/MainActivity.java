@@ -26,7 +26,6 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         addStatusViewWithColor(this, Color.parseColor("#39C2D0"));
-        Log.d("Flag","hhh");
         replaceFragment(new home());
         //底部导航栏
         bottomView = findViewById(R.id.BottomLayout);
@@ -45,7 +44,6 @@ public class MainActivity extends BaseActivity {
                         button_homePage++;
                         loadFragment(button_homePage,button_add,button_myself);
                     }
-                    //replaceFragment(new home());
                 } else if (position == 1) {
                     if(button_add == 0){
                         button_homePage = 0;
@@ -60,7 +58,6 @@ public class MainActivity extends BaseActivity {
                         button_myself++;
                         loadFragment(button_homePage,button_add,button_myself);
                     }
-                    //replaceFragment(new mine());
                 }
             }
 
@@ -71,7 +68,7 @@ public class MainActivity extends BaseActivity {
         if(button_homePage != 0){
             replaceFragment(new home());
         }else if(button_add != 0){
-
+            //replaceFragment(new release);
         }else if(button_myself != 0){
             replaceFragment(new mine());
         }

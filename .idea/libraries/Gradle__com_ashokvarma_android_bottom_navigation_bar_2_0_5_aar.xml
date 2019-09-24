@@ -1,13 +1,15 @@
 <component name="libraryTable">
   <library name="Gradle: com.ashokvarma.android:bottom-navigation-bar:2.0.5@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/065fe581763863445087204f28198ca3/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/10165d4139b07398d0b3e9021b8e6c63/bottom-navigation-bar-2.0.5/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/065fe581763863445087204f28198ca3/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/065fe581763863445087204f28198ca3/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/10165d4139b07398d0b3e9021b8e6c63/bottom-navigation-bar-2.0.5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/10165d4139b07398d0b3e9021b8e6c63/bottom-navigation-bar-2.0.5/res" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.ashokvarma.android/bottom-navigation-bar/2.0.5/39b944f9e1eb7e953bda9a456d29c7ae7d568819/bottom-navigation-bar-2.0.5-javadoc.jar!/" />
+    </JAVADOC>
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.ashokvarma.android/bottom-navigation-bar/2.0.5/de484a67caab85fd83067da27a161bb7bec9b494/bottom-navigation-bar-2.0.5-sources.jar!/" />
     </SOURCES>

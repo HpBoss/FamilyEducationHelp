@@ -169,28 +169,32 @@ public class home extends Fragment implements ViewPager.OnPageChangeListener {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        //viewPager监听触摸事件，
+        /*
+         * viewPager监听触摸事件，因为我们要保证用户在手动滑动viewPager后，系统重新计时，viewPage按一定时间间隔循环展示，
+         * 当手指按上屏幕或者是手指出现滑动动作，子线程都必须撤销（计时也就是消失）
+         * 当手机松开之后系统重新计时，子线程与UI线程绑定，进行计时操作
+         */
         vpager.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()){
                     case MotionEvent.ACTION_DOWN:
-                        mHandler.removeCallbacks(mLooperTask);
-                        Log.d(Tag,"DOWN");
-                        break;
                     case MotionEvent.ACTION_MOVE:
                         mHandler.removeCallbacks(mLooperTask);
-                        Log.d(Tag,"MOVE");
                         break;
                     case MotionEvent.ACTION_UP:
                         isSlide=true;
                         mHandler.post(mLooperTask);
-                        Log.d(Tag,"UP");
                         break;
                 }
                 return false;
             }
         });
+        /*
+         * 监听scrollView滑动，当招聘信息标题栏离屏幕顶部垂直距离小于statusBar的宽度时，隐藏scrollView里的“招聘信息”标题栏，
+         * 显示事先隐藏在statusBar下面的“招聘信息标”题栏，此时也要确保当手下滑动，标题栏距屏幕顶部垂直距离大于statusBar宽度时，
+         * 进行与之前相反的操作，有一点要注意：scrollView中“招聘信息”标题栏的隐藏是使用“INVISIBLE”，不然滑动时会出现头像跳动。
+         */
         mScrollView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
             @Override
             public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {

@@ -83,15 +83,12 @@ public class MyAccountActivity extends BaseActivity{
     private void init_myAccount_information() {
         Bitmap bitmap = BitmapFactory.decodeFile("/sdcard/Android/data/com.example.familyeducationhelp/cache/output_image.jpg");
         if (bitmap != null) {
-            Log.d("头像","无头像");
             MyAccountInformation myAccountAdapter0 = new MyAccountInformation("头像",bitmap,"",R.drawable.next);
             myAccountInformationList.add(myAccountAdapter0);
         }else {
-            Log.d("头像","空白头像");
             MyAccountInformation myAccountAdapter1 = new MyAccountInformation("头像","",R.drawable.unlogin_header,R.drawable.next);
             myAccountInformationList.add(myAccountAdapter1);
         }
-            Log.d("头像","哈哈哈哈哈哈");
         MyAccountInformation myAccountAdapter2 = new MyAccountInformation("用户名",null,"欧巴兽兽",R.drawable.next);
         myAccountInformationList.add(myAccountAdapter2);
         MyAccountInformation myAccountAdapter3 = new MyAccountInformation("账号密码",null,"未设置",R.drawable.next);

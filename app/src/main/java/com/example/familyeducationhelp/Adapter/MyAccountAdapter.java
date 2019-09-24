@@ -64,10 +64,10 @@ public class MyAccountAdapter extends RecyclerView.Adapter<MyAccountAdapter.View
         return myAccountInformationList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+     class ViewHolder extends RecyclerView.ViewHolder{
         TextView tv_name,tv_content;
         ImageView icon_image,icon_next;
-        public ViewHolder(@NonNull View itemView) {
+        private ViewHolder(@NonNull View itemView) {
             super(itemView);
             tv_name = itemView.findViewById(R.id.myAccount_name);
             tv_content = itemView.findViewById(R.id.myAccount_content);

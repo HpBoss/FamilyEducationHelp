@@ -61,15 +61,7 @@ public class mine extends ListFragment implements View.OnClickListener{
             //将图形设置为圆形
             imageView_head.setScaleType(ImageView.ScaleType.FIT_XY);
         }
-        Log.d("Flag","click_province");
         imageView_head.setOnClickListener(this);
-//        try{
-//            Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imageUri));
-//            imageView_head.setImageBitmap(bitmap);
-//            imageView_head.setScaleType(ImageView.ScaleType.FIT_XY);
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
         return view;
     }
 
@@ -103,9 +95,6 @@ public class mine extends ListFragment implements View.OnClickListener{
 
     @Override
     public void onClick(View view) {
-//        if (view.getId() == R.id.headImage){
-//            Toast.makeText(getActivity(),"hhhh",Toast.LENGTH_LONG).show();
-//        }
         switch (view.getId()){
             case R.id.headImage:
                 Intent intent = new Intent(getActivity(), MyAccountActivity.class);

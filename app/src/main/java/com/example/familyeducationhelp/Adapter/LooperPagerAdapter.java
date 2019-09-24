@@ -24,7 +24,7 @@ public class LooperPagerAdapter extends PagerAdapter {
         int realPosition = position%pictures.size();
         ImageView imageView = new ImageView(container.getContext());
         imageView.setImageResource(pictures.get(realPosition));
-        imageView.setScaleType(ImageView.ScaleType.FIT_XY);//让图片填满imageview，保持比例不变
+        imageView.setScaleType(ImageView.ScaleType.FIT_XY);//让图片填满ImageView，保持比例不变
         container.addView(imageView);
         return imageView;
     }

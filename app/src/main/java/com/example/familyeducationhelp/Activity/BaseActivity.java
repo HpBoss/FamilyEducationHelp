@@ -15,8 +15,9 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
+import com.example.familyeducationhelp.R;
+
 public class BaseActivity extends AppCompatActivity {
-    private EditText editText;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,14 @@ public class BaseActivity extends AppCompatActivity {
         if(actionbar != null){
             actionbar.hide();
         }
+    }
+    /**
+     * 重写回退键监听，添加返回活动切换动画
+     */
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.translate_left_in, R.anim.translate_right_out);
     }
     /**
      *键盘焦点监听，焦点消失键盘收起

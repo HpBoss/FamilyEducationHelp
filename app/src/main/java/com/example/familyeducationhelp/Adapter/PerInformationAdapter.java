@@ -3,7 +3,6 @@ package com.example.familyeducationhelp.Adapter;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,8 +17,6 @@ public class PerInformationAdapter extends RecyclerView.Adapter<PerInformationAd
     private View itemView;
     private RecyclerView mRv;
     private boolean isCalculationRvHeight ;
-    private String Tag = "item高度：";
-    private String Flag = "总高度：";
 
     static class ViewHolder extends RecyclerView.ViewHolder{
         ImageView icon_head;
@@ -45,8 +42,8 @@ public class PerInformationAdapter extends RecyclerView.Adapter<PerInformationAd
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         itemView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.personal_information_item,viewGroup,false);
-        ViewHolder holder = new ViewHolder(itemView);
-        return holder;
+//        ViewHolder holder = new ViewHolder(itemView);2019.9.24改动（注释，holder直接被new ViewHolder(itemView)代替）
+        return new ViewHolder(itemView);
     }
 
     @Override
@@ -73,8 +70,6 @@ public class PerInformationAdapter extends RecyclerView.Adapter<PerInformationAd
         RecyclerView.LayoutParams itemViewLp = (RecyclerView.LayoutParams)itemView.getLayoutParams();
         int itemCount = getItemCount();
         int recyclerViewHeight = itemViewLp.height * itemCount;
-        Log.d(Tag,String.valueOf(itemViewLp.height));
-        Log.d(Flag,String.valueOf(recyclerViewHeight));
         ConstraintLayout.LayoutParams rvLp = (ConstraintLayout.LayoutParams)mRv.getLayoutParams();
         rvLp.height = recyclerViewHeight+80;
         mRv.setLayoutParams(rvLp);

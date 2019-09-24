@@ -139,7 +139,6 @@ public class VerificationActivity extends BaseActivity implements View.OnClickLi
             //当倒计时的时候，不可点击
             textCaptcha.setClickable(false);
             textCaptcha.setTextSize(16);
-
         }
 
         @Override
