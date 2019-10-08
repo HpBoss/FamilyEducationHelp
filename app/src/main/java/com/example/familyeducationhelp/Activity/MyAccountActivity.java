@@ -1,7 +1,6 @@
 package com.example.familyeducationhelp.Activity;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Dialog;
 import android.content.ContentUris;
@@ -10,8 +9,6 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -23,16 +20,12 @@ import android.support.v4.content.FileProvider;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.AdapterView;
 import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.familyeducationhelp.Adapter.MyAccountAdapter;
@@ -43,9 +36,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class MyAccountActivity extends BaseActivity{
 
@@ -56,6 +47,7 @@ public class MyAccountActivity extends BaseActivity{
     private ImageView myAccount_back;
     private List<MyAccountInformation> myAccountInformationList = new ArrayList<>();
     private RecyclerView mRecyclerView;
+    private TextView text_title;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,7 +78,7 @@ public class MyAccountActivity extends BaseActivity{
             MyAccountInformation myAccountAdapter0 = new MyAccountInformation("头像",bitmap,"",R.drawable.next);
             myAccountInformationList.add(myAccountAdapter0);
         }else {
-            MyAccountInformation myAccountAdapter1 = new MyAccountInformation("头像","",R.drawable.unlogin_header,R.drawable.next);
+            MyAccountInformation myAccountAdapter1 = new MyAccountInformation("头像","",R.drawable.un_login_header,R.drawable.next);
             myAccountInformationList.add(myAccountAdapter1);
         }
         MyAccountInformation myAccountAdapter2 = new MyAccountInformation("用户名",null,"欧巴兽兽",R.drawable.next);
@@ -101,9 +93,11 @@ public class MyAccountActivity extends BaseActivity{
 
     //控件的初始化
     private void initData() {
+        text_title = findViewById(R.id.text_employment);
+        text_title.setText("我的账号");
         picture = findViewById(R.id.myAccount_image);
         myAccountInformationList = new ArrayList<>();
-        myAccount_back = findViewById(R.id.myAccount_back);
+        myAccount_back = findViewById(R.id.image_back);
         //返回MainActivity，将MainActivity设置成立singleTask，使返回的时候MainActivity依然是跳转前的状态
         myAccount_back.setOnClickListener(new View.OnClickListener() {
             @Override

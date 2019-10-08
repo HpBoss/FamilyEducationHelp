@@ -29,8 +29,11 @@
     <string name="subject">数学</string>
     <string name="money_unit">元/小时</string>
     <string name="price">80</string>
-    <string name="location_information">四川师范大学</string>
+    <string name="location_information">当前位置</string>
     <string name="icon_location">位置图标</string>
     <string name="icon_location_indicator">位置指示图标</string>
+    <string name="text_employment">招聘信息</string>
+    <string name="todo">TODO</string>
+    <string name="exit_login">退出登录</string>
 
 </resources>

@@ -5,11 +5,10 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 
 import com.example.familyeducationhelp.ClassList.BottomNavigationBar;
-import com.example.familyeducationhelp.Fragment.home;
-import com.example.familyeducationhelp.Fragment.mine;
+import com.example.familyeducationhelp.Fragment.Home;
+import com.example.familyeducationhelp.Fragment.Mine;
 import com.example.familyeducationhelp.R;
 
 /**
@@ -26,7 +25,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         addStatusViewWithColor(this, Color.parseColor("#39C2D0"));
-        replaceFragment(new home());
+        replaceFragment(new Home());
         //底部导航栏
         bottomView = findViewById(R.id.BottomLayout);
         //底部按钮的信息
@@ -66,11 +65,11 @@ public class MainActivity extends BaseActivity {
 
     private void loadFragment(int button_homePage, int button_add, int button_myself) {
         if(button_homePage != 0){
-            replaceFragment(new home());
+            replaceFragment(new Home());
         }else if(button_add != 0){
             //replaceFragment(new release);
         }else if(button_myself != 0){
-            replaceFragment(new mine());
+            replaceFragment(new Mine());
         }
     }
     //Fragment的更换

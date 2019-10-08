@@ -56,7 +56,7 @@ public class PerInformationAdapter extends RecyclerView.Adapter<PerInformationAd
         viewHolder.icon_head.setImageResource(personInformation.getImage());
         viewHolder.tv_name.setText(personInformation.getPerson_name());
         viewHolder.tv_price.setText(personInformation.getPrice());
-        setRecyclerViewHeight();//设置recyclerView的高度
+        //setRecyclerViewHeight();//设置recyclerView的高度
     }
 
     @Override
@@ -71,7 +71,7 @@ public class PerInformationAdapter extends RecyclerView.Adapter<PerInformationAd
         int itemCount = getItemCount();
         int recyclerViewHeight = itemViewLp.height * itemCount;
         ConstraintLayout.LayoutParams rvLp = (ConstraintLayout.LayoutParams)mRv.getLayoutParams();
-        rvLp.height = recyclerViewHeight+80;
+        rvLp.height = recyclerViewHeight+60;
         mRv.setLayoutParams(rvLp);
     }
 }

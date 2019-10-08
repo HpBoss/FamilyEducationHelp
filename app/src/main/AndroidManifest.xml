@@ -20,7 +20,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name=".ClassList.init_lc">
+        android:name=".ClassList.Init_lc">
         <activity android:name=".Activity.MainActivity"
             android:launchMode="singleTask">
             <intent-filter>
@@ -53,7 +53,10 @@
         <activity android:name=".Activity.MyAccountActivity">
 
         </activity>
+        <activity android:name=".Activity.BaseActivity">
 
+        </activity>
+        <activity android:name=".Activity.Employment" />
 
     </application>
 

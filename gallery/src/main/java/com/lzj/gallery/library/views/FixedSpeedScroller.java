@@ -1,4 +1,4 @@
-package com.example.familyeducationhelp.ClassList;
+package com.lzj.gallery.library.views;
 
 import android.content.Context;
 import android.view.animation.AccelerateInterpolator;

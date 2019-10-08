@@ -5,7 +5,7 @@ import android.app.Application;
 import cn.leancloud.AVLogger;
 import cn.leancloud.AVOSCloud;
 
-public class init_lc extends Application {
+public class Init_lc extends Application {
     private static final String LC_APP_ID = "N0BgS5JiJ9uvbGAaP6CLg94G-gzGzoHsz";
     private static final String LC_APP_KEY = "oKfV8fm67mH5kbPcAtP6hGsM";
     @Override

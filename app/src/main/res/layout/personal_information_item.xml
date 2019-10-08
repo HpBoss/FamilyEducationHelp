@@ -9,17 +9,20 @@
         android:id="@+id/icon_head"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_margin="10dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:src="@drawable/luosheng"
-        app:riv_oval="true"/>
+        app:riv_oval="true" />
 
     <ImageView
         android:id="@+id/iv_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
         android:layout_marginBottom="10dp"
         android:layout_toEndOf="@+id/icon_head"
         android:layout_toRightOf="@+id/icon_head"
@@ -40,8 +43,8 @@
         android:id="@+id/person_name"
         android:layout_toRightOf="@+id/icon_head"
         android:layout_toEndOf="@+id/icon_head"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
         android:textSize="20sp"
         android:layout_marginTop="10dp"
         android:text="@string/person_name"/>
@@ -52,8 +55,8 @@
         android:src="@drawable/release_time"
         android:layout_toEndOf="@+id/label_site"
         android:layout_toRightOf="@+id/label_site"
-        android:layout_marginLeft="40dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
         android:layout_marginBottom="10dp"
         android:layout_alignParentBottom="true"
         />
@@ -66,25 +69,27 @@
         android:layout_toRightOf="@+id/icon_time"
         android:layout_marginBottom="10dp"
         android:layout_toEndOf="@+id/icon_time"/>
+
     <TextView
         android:id="@+id/label_grade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/ellipse_blue_background_shape"
-        android:layout_toRightOf="@+id/label_site"
-        android:layout_toEndOf="@+id/label_site"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="15dp"
-        android:layout_marginLeft="45dp"
-        android:layout_marginStart="45dp"
-        android:text="@string/grade"/>
+        android:layout_toEndOf="@+id/label_site"
+        android:layout_toRightOf="@+id/label_site"
+        android:background="@drawable/ellipse_blue_background_shape"
+        android:text="@string/grade" />
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/course_label"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginTop="15dp"/>
     <TextView
         android:id="@+id/label_subject"
@@ -93,9 +98,9 @@
         android:text="@string/subject"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="16dp"/>
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -122,7 +127,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
         android:text="@string/money_unit" />

@@ -40,11 +40,13 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:clickable="true"
-            android:src="@drawable/unlogin_header"
+            android:focusable="true"
+            android:src="@drawable/un_login_header"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:riv_oval="true" />
+            app:riv_oval="true"
+            />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -64,9 +66,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ellipse_white_background_shape"
-                android:text="四年级"
+                android:text="@string/grade"
                 android:textColor="@color/colorBlue"
-                android:textSize="13dp" />
+                android:textSize="13sp" />
 
             <TextView
                 android:layout_width="0dp"
@@ -77,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:text="我的名字叫小明"
                 android:textColor="@color/colorWhite"
-                android:textSize="19dp" />
+                android:textSize="19sp" />
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>
 

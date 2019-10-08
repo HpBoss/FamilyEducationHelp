@@ -3,7 +3,9 @@
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/cn.leancloud/storage-core/5.0.18/f4ec46e0cfcd7660d72334297adea852db008bf3/storage-core-5.0.18.jar!/" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/cn.leancloud/storage-core/5.0.18/c1e6c61ebbd4660db5b5331903ecc9029b9c5ac1/storage-core-5.0.18-javadoc.jar!/" />
+    </JAVADOC>
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/cn.leancloud/storage-core/5.0.18/a7d342be175771004d9df7621552d51eb9e8ce99/storage-core-5.0.18-sources.jar!/" />
     </SOURCES>

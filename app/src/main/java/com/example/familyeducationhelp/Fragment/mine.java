@@ -25,7 +25,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class mine extends ListFragment implements View.OnClickListener{
+public class Mine extends ListFragment implements View.OnClickListener{
 
     private ListView lv;
     private SimpleAdapter adapter;
