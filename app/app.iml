@@ -151,5 +151,6 @@
     <orderEntry type="library" name="Gradle: com.makeramen:roundedimageview:2.2.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.ashokvarma.android:bottom-navigation-bar:2.0.5@aar" level="project" />
     <orderEntry type="module" module-name="gallery" />
+    <orderEntry type="module" module-name="gallery" />
   </component>
 </module>
