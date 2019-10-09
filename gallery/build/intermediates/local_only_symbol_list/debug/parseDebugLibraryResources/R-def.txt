@@ -1,0 +1,12 @@
+R_DEF: Internal format may change without notice
+local
+id img
+id lineIndicator
+id rootView
+id viewPager
+layout banner_img_layout
+layout banner_view_layout
+mipmap ic_banner_error
+mipmap ic_banner_point
+mipmap ic_banner_point_press
+string app_name
