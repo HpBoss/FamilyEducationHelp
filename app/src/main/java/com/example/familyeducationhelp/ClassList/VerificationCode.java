@@ -27,7 +27,7 @@ public class VerificationCode extends RelativeLayout {
 
     public VerificationCode(Context context, AttributeSet attrs, int defStyleAttr){
         super(context,attrs,defStyleAttr);
-        View.inflate(context, R.layout.verifiaction_code,this);
+        View.inflate(context, R.layout.item_verifiaction_code,this);
         
         textViews = new TextView[MAX];
         textViews[0] = findViewById(R.id.tv_one);

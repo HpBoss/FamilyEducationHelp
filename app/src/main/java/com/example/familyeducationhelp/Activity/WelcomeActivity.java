@@ -11,14 +11,14 @@ public class WelcomeActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.wellcom);
+        setContentView(R.layout.activity_wellcom);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 SharedPreferences preferences = getSharedPreferences("count", 0); // 存在则打开它，否则创建新的Preferences
                 int count = preferences.getInt("count", 0); // 取出数据
                 if (count == 0) {
-                    Intent intent_identity = new Intent(WelcomeActivity.this, loginActivity.class);
+                    Intent intent_identity = new Intent(WelcomeActivity.this, LoginActivity.class);
                     startActivity(intent_identity);
                     finish();
                 } else {

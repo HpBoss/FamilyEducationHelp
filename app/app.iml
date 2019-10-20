@@ -102,6 +102,7 @@
     <orderEntry type="library" scope="TEST" name="Gradle: com.android.support.test:monitor:1.0.2@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.android.support.test.espresso:espresso-idling-resource:3.0.2@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: junit:junit:4.13-beta-3@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:F.\android_file\Daiso\V5\familyEducationHelp\app\libs\BaiduLBS_Android.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: cn.leancloud:storage-android:5.0.18@jar" level="project" />
     <orderEntry type="library" name="Gradle: cn.leancloud:storage-core:5.0.18@jar" level="project" />
     <orderEntry type="library" name="Gradle: io.reactivex.rxjava2:rxjava:2.2.3@jar" level="project" />
@@ -150,7 +151,6 @@
     <orderEntry type="library" name="Gradle: android.arch.core:runtime:1.1.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.makeramen:roundedimageview:2.2.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.ashokvarma.android:bottom-navigation-bar:2.0.5@aar" level="project" />
-    <orderEntry type="module" module-name="gallery" />
     <orderEntry type="module" module-name="gallery" />
     <orderEntry type="module" module-name="gallery" />
     <orderEntry type="module" module-name="gallery" />

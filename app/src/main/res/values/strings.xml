@@ -35,5 +35,9 @@
     <string name="text_employment">招聘信息</string>
     <string name="todo">TODO</string>
     <string name="exit_login">退出登录</string>
+    <string name="input_bottom_hint">未注册的手机号验证后自动创建家教帮账户</string>
+    <string name="forget_password">忘记密码</string>
+    <string name="please_input_key">请输入密码</string>
+
 
 </resources>

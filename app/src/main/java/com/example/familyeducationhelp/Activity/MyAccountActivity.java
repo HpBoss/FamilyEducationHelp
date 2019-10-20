@@ -51,7 +51,7 @@ public class MyAccountActivity extends BaseActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.myaccount_layout);
+        setContentView(R.layout.activity_myaccount_layout);
         addStatusViewWithColor(this, getResources().getColor(R.color.colorMainBlue));
         initData();
         init_myAccount_information();
@@ -116,7 +116,7 @@ public class MyAccountActivity extends BaseActivity{
         //1、使用Dialog、设置style
         final Dialog dialog = new Dialog(this,R.style.DialogTheme);
         //2、设置布局
-        View view = View.inflate(this,R.layout.myaccount_dialog_layout,null);
+        View view = View.inflate(this,R.layout.dialog_myaccount_layout,null);
         dialog.setContentView(view);
 
         Window window = dialog.getWindow();

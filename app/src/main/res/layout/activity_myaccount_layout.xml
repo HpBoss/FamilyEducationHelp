@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/item_head_title" />
+
+    <Button
+        android:id="@+id/exitCurrentAccount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGray"
+        android:text="@string/exit_login"
+        android:textAllCaps="false"
+        android:textColor="#DD0404"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/myAccount_RecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:maxHeight="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/exitCurrentAccount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include" />
+
+</android.support.constraint.ConstraintLayout>

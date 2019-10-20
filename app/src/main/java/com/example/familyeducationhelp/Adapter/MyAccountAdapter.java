@@ -4,13 +4,11 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.familyeducationhelp.Activity.MyAccountActivity;
 import com.example.familyeducationhelp.ClassList.MyAccountInformation;
@@ -27,7 +25,7 @@ public class MyAccountAdapter extends RecyclerView.Adapter<MyAccountAdapter.View
 
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, final int i) {
-        itemView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.myaccount_list_item,viewGroup,false);
+        itemView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_myaccount_list,viewGroup,false);
         final ViewHolder holder = new ViewHolder(itemView);
         mMyAccountActivity = new MyAccountActivity();
         itemView.setOnClickListener(new View.OnClickListener() {

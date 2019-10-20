@@ -19,7 +19,7 @@ public class IdentityActivity extends BaseActivity implements View.OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.identity_choice);
+        setContentView(R.layout.activity_identity_choice);
         addStatusViewWithColor(this, Color.parseColor("#39C2D0"));
         init();
     }

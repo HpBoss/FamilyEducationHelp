@@ -41,7 +41,7 @@ public class PerInformationAdapter extends RecyclerView.Adapter<PerInformationAd
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        itemView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.personal_information_item,viewGroup,false);
+        itemView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_personal_information,viewGroup,false);
 //        ViewHolder holder = new ViewHolder(itemView);2019.9.24改动（注释，holder直接被new ViewHolder(itemView)代替）
         return new ViewHolder(itemView);
     }

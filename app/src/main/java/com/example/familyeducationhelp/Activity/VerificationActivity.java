@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
@@ -13,36 +12,34 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import com.example.familyeducationhelp.ClassList.SendMessageRequest;
 import com.example.familyeducationhelp.ClassList.VerificationCode;
 import com.example.familyeducationhelp.R;
-
 import cn.leancloud.sms.AVSMS;
 import cn.leancloud.types.AVNull;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
 public class VerificationActivity extends BaseActivity implements View.OnClickListener{
-    private VerificationCode verificationCode;
     private EditText editText;
     private TextView textCaptcha;
     private String verifyCode ;
     private String mobilePhone;
-    private ImageView iv_rt;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.input_verification);
+        setContentView(R.layout.activity_input_verification);
         addStatusViewWithColor(this, Color.parseColor("#39C2D0"));
         //实例化editText、textView、获取焦点、打开软键盘
         initWindows();
         //当一转到这个活动，就启动——倒计时
         countTimer.start();
         //左上角返回按钮
-        iv_rt = findViewById(R.id.iv_rt);
+        ImageView iv_rt = findViewById(R.id.iv_rt);
         iv_rt.setOnClickListener(this);
         //监听验证码的输入情况并进行判断
-        verificationCode = findViewById(R.id.verify_code_view);
+        VerificationCode verificationCode = findViewById(R.id.verify_code_view);
         verificationCode.setInputCompleteListener(new VerificationCode.InputCompleteListener() {
             @Override
             public void inputComplete() {
@@ -84,7 +81,7 @@ public class VerificationActivity extends BaseActivity implements View.OnClickLi
         InputMethodManager imm = (InputMethodManager) VerificationActivity.this.getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), 0);
         //跳转到主界面
-        Intent intent = new Intent(VerificationActivity.this, IdentityActivity.class);
+        Intent intent = new Intent(VerificationActivity.this, MainActivity.class);
         startActivity(intent);
         finish();
         overridePendingTransition(R.anim.alpha_in, R.anim.alpha_out);
@@ -108,9 +105,24 @@ public class VerificationActivity extends BaseActivity implements View.OnClickLi
         switch (v.getId()){
             case R.id.textCaptcha:
                 countTimer.start();
+                Intent intents = getIntent();
+                mobilePhone = intents.getStringExtra("mobilePhone");
+                SendMessageRequest messageRequest = new SendMessageRequest(mobilePhone);
+                messageRequest.sendRequest();
+                messageRequest.setIsSendMessage(new SendMessageRequest.SendMessage() {
+                    @Override
+                    public void SendSucceed() {
+                        Toast.makeText(VerificationActivity.this,"发送成功",Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void SendFalse(Throwable throwable) {
+                        Toast.makeText(VerificationActivity.this,"发送失败",Toast.LENGTH_SHORT).show();
+                    }
+                });
                 break;
             case R.id.iv_rt:
-                Intent intent = new Intent(this, loginActivity.class);
+                Intent intent = new Intent(this, LoginActivity.class);
                 startActivity(intent);
                 finish();
                 overridePendingTransition(R.anim.alpha_in, R.anim.alpha_out);
@@ -125,7 +137,7 @@ public class VerificationActivity extends BaseActivity implements View.OnClickLi
 
     //新建一个CountTimer继承CountDownTimer,并使用他的onTick和onFinish方法
     public class CountTimer extends CountDownTimer {
-        public CountTimer(long millisInFuture, long countDownInterval) {
+        private CountTimer(long millisInFuture, long countDownInterval) {
             super(millisInFuture, countDownInterval);
         }
 
@@ -143,7 +155,6 @@ public class VerificationActivity extends BaseActivity implements View.OnClickLi
 
         @Override
         public void onFinish() {
-            Log.d("MainActivity","倒计时完成");
             textCaptcha.setTextSize(16);
             textCaptcha.setText("重新发送");
             textCaptcha.setClickable(true);
