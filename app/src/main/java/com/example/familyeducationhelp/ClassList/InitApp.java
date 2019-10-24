@@ -11,11 +11,12 @@ import cn.leancloud.AVOSCloud;
 public class InitApp extends Application {
     private static final String LC_APP_ID = "N0BgS5JiJ9uvbGAaP6CLg94G-gzGzoHsz";
     private static final String LC_APP_KEY = "oKfV8fm67mH5kbPcAtP6hGsM";
+    private static final String LC_APP_serverURL = "https://n0bgs5ji.lc-cn-n1-shared.com";
     @Override
     public void onCreate() {
         super.onCreate();
         AVOSCloud.setLogLevel(AVLogger.Level.DEBUG);
-        AVOSCloud.initialize(this, LC_APP_ID, LC_APP_KEY);
+        AVOSCloud.initialize(this, LC_APP_ID, LC_APP_KEY,LC_APP_serverURL);
         //在使用SDK各组件之前初始化context信息，传入ApplicationContext
         SDKInitializer.initialize(this);
         //自4.3.0起，百度地图SDK所有接口均支持百度坐标和国测局坐标，用此方法设置您使用的坐标类型.

@@ -1,7 +1,8 @@
 package com.lzj.gallery.library.transformer;
 
-import android.support.v4.view.ViewPager;
 import android.view.View;
+
+import androidx.viewpager.widget.ViewPager;
 
 /**
  * Created by Administrator on 2018/11/28.

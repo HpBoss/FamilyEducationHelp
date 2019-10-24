@@ -1,13 +1,17 @@
 package com.example.familyeducationhelp.Adapter;
 
-import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.familyeducationhelp.Activity.MainActivity;
 import com.example.familyeducationhelp.ClassList.PersonInformation;
 import com.example.familyeducationhelp.R;
 import java.util.List;
@@ -19,17 +23,18 @@ public class PerInformationAdapter extends RecyclerView.Adapter<PerInformationAd
     private boolean isCalculationRvHeight ;
 
     static class ViewHolder extends RecyclerView.ViewHolder{
+        View perInformationView;
         ImageView icon_head;
-        TextView tv_name,tv_time,tv_grade,tv_location,tv_price,tv_subject;
+        TextView tv_name,tv_time,tv_grade,tv_location,tv_price;
         private ViewHolder(@NonNull View itemView) {
             super(itemView);
+            perInformationView = itemView;
             icon_head = itemView.findViewById(R.id.icon_head);
             tv_name = itemView.findViewById(R.id.person_name);
             tv_time = itemView.findViewById(R.id.label_time);
             tv_grade = itemView.findViewById(R.id.label_grade);
             tv_location = itemView.findViewById(R.id.label_site);
             tv_price = itemView.findViewById(R.id.label_price);
-            tv_subject = itemView.findViewById(R.id.label_subject);
         }
     }
 
@@ -42,20 +47,25 @@ public class PerInformationAdapter extends RecyclerView.Adapter<PerInformationAd
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         itemView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_personal_information,viewGroup,false);
-//        ViewHolder holder = new ViewHolder(itemView);2019.9.24改动（注释，holder直接被new ViewHolder(itemView)代替）
-        return new ViewHolder(itemView);
+        final ViewHolder holder = new ViewHolder(itemView);
+        holder.perInformationView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        return holder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         PersonInformation personInformation = mPersonInformationList.get(i);
-        viewHolder.tv_subject.setText(personInformation.getSubject());
         viewHolder.tv_location.setText(personInformation.getSite());
         viewHolder.tv_grade.setText(personInformation.getGrade());
         viewHolder.tv_time.setText(personInformation.getTime());
         viewHolder.icon_head.setImageResource(personInformation.getImage());
         viewHolder.tv_name.setText(personInformation.getPerson_name());
-        viewHolder.tv_price.setText(personInformation.getPrice());
+        viewHolder.tv_price.setText(String.format("%s%s", personInformation.getPrice(), "元/小时"));
         //setRecyclerViewHeight();//设置recyclerView的高度
     }
 

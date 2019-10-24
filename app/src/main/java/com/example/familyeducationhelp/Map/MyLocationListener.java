@@ -1,5 +1,7 @@
 package com.example.familyeducationhelp.Map;
 
+import android.widget.TextView;
+
 import com.baidu.location.BDAbstractLocationListener;
 import com.baidu.location.BDLocation;
 import com.baidu.mapapi.map.BaiduMap;
@@ -22,7 +24,7 @@ public class MyLocationListener extends BDAbstractLocationListener {
         this.mMyOrientationListener = mMyOrientationListener;
     }
 
-        @Override
+    @Override
         public void onReceiveLocation(BDLocation location) {
             //mapView 销毁后不再处理新接收的位置
             if (location == null || mMapView == null){

@@ -2,15 +2,15 @@ package com.example.familyeducationhelp.Adapter;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.familyeducationhelp.Activity.MyAccountActivity;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.familyeducationhelp.ClassList.MyAccountInformation;
 import com.example.familyeducationhelp.R;
 
@@ -20,14 +20,12 @@ import java.util.List;
 public class MyAccountAdapter extends RecyclerView.Adapter<MyAccountAdapter.ViewHolder>{
     private View itemView;
     private List<MyAccountInformation> myAccountInformationList = new ArrayList<>();
-    private MyAccountActivity mMyAccountActivity;
     private OnItemClickListener mClickListener;
 
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, final int i) {
         itemView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_myaccount_list,viewGroup,false);
         final ViewHolder holder = new ViewHolder(itemView);
-        mMyAccountActivity = new MyAccountActivity();
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

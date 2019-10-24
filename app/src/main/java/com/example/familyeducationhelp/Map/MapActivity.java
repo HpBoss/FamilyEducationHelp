@@ -1,12 +1,14 @@
 package com.example.familyeducationhelp.Map;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.ZoomControls;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.baidu.mapapi.map.BaiduMap;
@@ -20,7 +22,7 @@ import com.baidu.mapapi.search.route.RoutePlanSearch;
 import com.baidu.mapapi.search.route.TransitRoutePlanOption;
 import com.example.familyeducationhelp.R;
 
-public class MapActivity extends AppCompatActivity implements View.OnClickListener {
+public class MapActivity extends AppCompatActivity {
     private MapView mMapView = null;
     private BaiduMap mBaiduMap = null;
     private LocationClient mLocationClient = null;
@@ -45,11 +47,6 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
         mSearch = RoutePlanSearch.newInstance();
         mGeoCoderA.setOnGetGeoCodeResultListener(mMcheckDistance);
         mGeoCoderB.setOnGetGeoCodeResultListener(mMcheckDistance);
-
-        Button bt_check_route = findViewById(R.id.display);
-        Button bt_check_distance = findViewById(R.id.distances);
-        bt_check_distance.setOnClickListener(this);
-        bt_check_route.setOnClickListener(this);
         mMapView = findViewById(R.id.mapView);
         mBaiduMap = mMapView.getMap();
         mUiSettings = mBaiduMap.getUiSettings();
@@ -91,36 +88,36 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
     }
 
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.display:
-                PlanNode stNode = PlanNode.withCityNameAndPlaceName("成都", "四川师范大学成龙校区");
-                PlanNode enNode = PlanNode.withCityNameAndPlaceName("成都", "成都市第二人民医院");
-                mSearch.transitSearch((new TransitRoutePlanOption())
-                        .from(stNode)
-                        .to(enNode)
-                        .city("成都"));
-
-                break;
-            case R.id.distances:
-                mGeoCoderA.geocode(new GeoCodeOption()
-                        .city("成都")// 城市
-                        .address("成都市第二人民医院")); // 地址
-                mGeoCoderB.geocode(new GeoCodeOption()
-                        .city("成都")
-                        .address("四川师范大学成龙校区"));
-                //输出A与B之间的直线距离
-                mMcheckDistance.getOnDistanceValue(new CheckDistance.OnDistance() {
-                    @Override
-                    public void onDistanceValue(String x) {
-                        Toast.makeText(MapActivity.this,x,Toast.LENGTH_LONG).show();
-                    }
-                });
-                break;
-        }
-
-    }
+//    @Override
+//    public void onClick(View v) {
+//        switch (v.getId()){
+//            case R.id.display:
+//                PlanNode stNode = PlanNode.withCityNameAndPlaceName("成都", "四川师范大学成龙校区");
+//                PlanNode enNode = PlanNode.withCityNameAndPlaceName("成都", "成都市第二人民医院");
+//                mSearch.transitSearch((new TransitRoutePlanOption())
+//                        .from(stNode)
+//                        .to(enNode)
+//                        .city("成都"));
+//
+//                break;
+//            case R.id.distances:
+//                mGeoCoderA.geocode(new GeoCodeOption()
+//                        .city("成都")// 城市
+//                        .address("成都市第二人民医院")); // 地址
+//                mGeoCoderB.geocode(new GeoCodeOption()
+//                        .city("成都")
+//                        .address("四川师范大学成龙校区"));
+//                //输出A与B之间的直线距离
+//                mMcheckDistance.getOnDistanceValue(new CheckDistance.OnDistance() {
+//                    @Override
+//                    public void onDistanceValue(String x) {
+//                        Toast.makeText(MapActivity.this,x,Toast.LENGTH_LONG).show();
+//                    }
+//                });
+//                break;
+//        }
+//
+//    }
 
 
 
@@ -162,4 +159,5 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
         mMapView = null;
         super.onDestroy();
     }
+
 }

@@ -1,9 +1,10 @@
 package com.example.familyeducationhelp.ClassList;
 
 import android.content.Context;
-import android.support.v7.widget.AppCompatEditText;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+
+import androidx.appcompat.widget.AppCompatEditText;
 
 
 public class MyEditText extends AppCompatEditText {

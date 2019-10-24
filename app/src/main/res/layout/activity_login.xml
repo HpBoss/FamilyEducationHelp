@@ -1,27 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/input_phone_backg">
-    <!--图标-->
+
     <ImageView
         android:id="@+id/icon"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
         android:contentDescription="@string/icon"
-        android:src="@drawable/icon" />
+        android:src="@drawable/icon"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
 
     <LinearLayout
         android:id="@+id/input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="35dp"
-        android:layout_marginRight="35dp"
-        android:layout_below="@+id/icon"
-        android:layout_marginTop="80dp"
-        android:orientation="vertical">
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/icon">
 
         <LinearLayout
             android:id="@+id/input_phone_number"
@@ -43,7 +57,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="5dp"
-                android:src="@drawable/phone_number" />
+                android:src="@drawable/phone_number"
+                android:contentDescription="@string/todo" />
             <!--输入手机还文本框-->
             <EditText
                 android:id="@+id/input_phone"
@@ -62,7 +77,8 @@
                 android:textColor="@color/colorBlack"
                 android:textColorHint="@color/colorGray"
                 android:textSize="20sp"
-                android:theme="@style/MyEditText" />
+                android:theme="@style/MyEditText"
+                android:autofillHints="" tools:targetApi="o" />
             <!--focusable、focusableInTouchMode属性为了截断进入页面输入框自动获取焦点-->
             <!--删除符号-->
             <ImageView
@@ -79,31 +95,33 @@
             android:id="@+id/first_below_line"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/input_below_line" />
+            android:src="@drawable/input_below_line"
+            android:contentDescription="@string/todo" />
+
         <TextView
             android:id="@+id/bottom_hint"
-            android:layout_marginTop="3dp"
-            android:visibility="visible"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
             android:text="@string/input_bottom_hint"
-            android:textColor="@color/colorGray"/>
-<!--        输入密码-->
+            android:textColor="@color/colorGray"
+            android:visibility="visible" />
+        <!--        输入密码-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
             android:layout_gravity="center_vertical"
+            android:layout_marginBottom="5dp"
             android:orientation="horizontal">
+
             <EditText
                 android:id="@+id/input_login_key"
                 android:layout_width="0dp"
-                android:visibility="gone"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
                 android:background="@null"
                 android:focusable="true"
-                android:layout_weight="1"
-                android:layout_marginTop="10dp"
                 android:focusableInTouchMode="true"
                 android:hint="@string/please_input_key"
                 android:inputType="textPassword"
@@ -111,93 +129,122 @@
                 android:textColor="@color/colorBlack"
                 android:textColorHint="@color/colorGray"
                 android:textSize="20sp"
-                android:theme="@style/MyEditText" />
+                android:theme="@style/MyEditText"
+                android:visibility="gone"
+                android:autofillHints="" tools:targetApi="o"/>
             <!--删除符号-->
             <ImageView
                 android:id="@+id/image_delete2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="15dp"
                 android:contentDescription="@string/delete_all_num"
                 android:src="@drawable/icon_delete"
-                android:layout_marginTop="10dp"
                 android:visibility="gone" />
+
             <ImageView
                 android:id="@+id/display_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="5dp"
                 android:src="@drawable/hide_password"
                 android:visibility="gone"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center_vertical"
-                />
+                android:contentDescription="@string/todo" />
         </LinearLayout>
 
         <ImageView
             android:id="@+id/bottom_line"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"
+            android:layout_marginBottom="10dp"
             android:src="@drawable/input_below_line"
-            android:layout_marginBottom="10dp"/>
+            android:visibility="gone"
+            android:contentDescription="@string/todo" />
     </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
     <!--获取验证码按钮-->
     <Button
         android:id="@+id/get_verify"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/rectangle_button_dark"
-        android:layout_marginLeft="35dp"
-        android:layout_marginRight="35dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/verification_code"
         android:layout_below="@+id/input"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/rectangle_button_dark"
+        android:text="@string/verification_code"
+        android:textColor="@color/colorBlack"
         android:textSize="20sp"
-        android:textColor="@color/colorBlack" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input" />
     <!--密码登录-->
+    <!--    忘记密码-->
+
     <TextView
         android:id="@+id/password_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/password_login"
         android:layout_below="@id/get_verify"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="30dp"
-        android:layout_marginStart="35dp"
-        android:textColor="@color/colorYellow" />
+        android:text="@string/password_login"
+        android:textColor="@color/colorYellow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/get_verify" />
 
     <TextView
         android:id="@+id/forget_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/forget_password"
         android:layout_below="@id/get_verify"
         android:layout_marginTop="30dp"
-        android:layout_marginEnd="35dp"
-        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="40dp"
+        android:text="@string/forget_password"
+        android:textColor="@color/colorYellow"
         android:visibility="gone"
-        android:textColor="@color/colorYellow" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/get_verify" />
+
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:gravity="center_horizontal"
-        android:layout_marginBottom="20dp">
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
         <TextView
             android:id="@+id/login_agree"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/login_agree"
-            android:textColor="@color/colorWhite"/>
+            android:textColor="@color/colorWhite" />
+
         <TextView
             android:id="@+id/agreement"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/agreement"
+            android:layout_toEndOf="@+id/login_agree"
             android:autoLink="all"
-            android:textColor="@color/colorYellow"
-            android:layout_toEndOf="@+id/login_agree" />
+            android:text="@string/agreement"
+            android:textColor="@color/colorYellow" />
     </RelativeLayout>
 
-</RelativeLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -44,7 +44,6 @@
         android:textColor="@color/colorWhite"
         android:clickable="true"
         android:focusable="true"
-        android:layout_marginLeft="50dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"/>
 

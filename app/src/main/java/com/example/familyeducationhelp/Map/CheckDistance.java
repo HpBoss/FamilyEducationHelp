@@ -15,14 +15,15 @@ public class CheckDistance implements OnGetGeoCoderResultListener {
     private OnDistance mOnDistance = null;
     public interface OnDistance{
         void onDistanceValue(String x);
+        void onAddress(String location);
     }
     public void getOnDistanceValue(OnDistance mOnDistance){
         this.mOnDistance = mOnDistance;
     }
+    //地理编码
     @Override
     public void onGetGeoCodeResult(GeoCodeResult geoCodeResult) {
         if (geoCodeResult == null || geoCodeResult.error != SearchResult.ERRORNO.NO_ERROR) {
-//            Toast.makeText(MapActivity.this, "抱歉，未能找到结果", Toast.LENGTH_LONG).show();
             return;
         }
         i++;
@@ -40,12 +41,14 @@ public class CheckDistance implements OnGetGeoCoderResultListener {
             String distance = String.valueOf(df.format(kilometre));
             String finalDistance = "全程" + distance + "公里";
             mOnDistance.onDistanceValue(finalDistance);
-//            Toast.makeText(MapActivity.this,finalDistance,Toast.LENGTH_LONG).show();
         }
     }
-
+    //反地理编码
     @Override
     public void onGetReverseGeoCodeResult(ReverseGeoCodeResult reverseGeoCodeResult) {
-
+//        if (reverseGeoCodeResult == null || reverseGeoCodeResult.error != SearchResult.ERRORNO.NO_ERROR) {
+//            return;
+//        }
+//        mOnDistance.onAddress(reverseGeoCodeResult.getAddress());
     }
 }

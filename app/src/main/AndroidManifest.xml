@@ -24,8 +24,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".ClassList.InitApp">
-        <activity android:name=".Activity.WelcomeActivity"
-            android:launchMode="singleTask">
+        <activity android:name=".Activity.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW"/>
@@ -40,7 +40,7 @@
             android:process=":remote"/>
         <provider
             android:authorities="com.example.familyeducationhelp.fileprovider"
-            android:name="android.support.v4.content.FileProvider"
+            android:name="androidx.core.content.FileProvider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -50,7 +50,7 @@
         <activity android:name=".Activity.VerificationActivity">
 
         </activity>
-        <activity android:name=".Activity.MainActivity">
+        <activity android:name=".Activity.WelcomeActivity">
 
         </activity>
         <activity android:name=".Activity.IdentityActivity">
@@ -65,7 +65,6 @@
         <activity android:name=".Activity.BaseActivity">
 
         </activity>
-
     </application>
 
 </manifest>

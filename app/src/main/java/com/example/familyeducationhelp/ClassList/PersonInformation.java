@@ -6,16 +6,14 @@ public class PersonInformation {
     private String grade;
     private String time;
     private String site;
-    private String subject;
     private String price;
 
-    public PersonInformation(String person_name, int image, String grade, String time, String site, String subject, String price) {
+    public PersonInformation(String person_name, int image, String grade, String time, String site, String price) {
         this.person_name = person_name;
         this.image = image;
         this.grade = grade;
         this.time = time;
         this.site = site;
-        this.subject = subject;
         this.price = price;
     }
 
@@ -37,10 +35,6 @@ public class PersonInformation {
 
     public String getSite() {
         return site;
-    }
-
-    public String getSubject() {
-        return subject;
     }
 
     public String getPrice() {

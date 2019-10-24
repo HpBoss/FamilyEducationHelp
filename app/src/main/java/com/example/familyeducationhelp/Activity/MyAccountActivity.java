@@ -14,12 +14,14 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.FileProvider;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,6 +50,31 @@ public class MyAccountActivity extends BaseActivity{
     private List<MyAccountInformation> myAccountInformationList = new ArrayList<>();
     private RecyclerView mRecyclerView;
     private TextView text_title;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("onStart:","start");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("onStop:","stop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("onDestroy:","destroy");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("onResume:","resume");
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -186,12 +213,13 @@ public class MyAccountActivity extends BaseActivity{
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        switch (requestCode){
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
             case TAKE_PHOTO:
                 //如果拍照成功，通过BitmapFactory将图片解析成Bitmap对象，再设置到ImageView中显示出来
-                if(resultCode == RESULT_OK){
-                    try{
+                if (resultCode == RESULT_OK) {
+                    try {
                         picture = findViewById(R.id.myAccount_image);
                         Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imageUri));
 //                        Log.d(TAG, "onActivityResult: "+getContentResolver().openInputStream(imageUri));
@@ -203,10 +231,10 @@ public class MyAccountActivity extends BaseActivity{
                 }
                 break;
             case CHOOSE_PHOTO:
-                if(resultCode == RESULT_OK){
-                    if(Build.VERSION.SDK_INT >= 19 ){
+                if (resultCode == RESULT_OK) {
+                    if (Build.VERSION.SDK_INT >= 19) {
                         handleImageOnKitKat(data);
-                    }else{
+                    } else {
                         handleImageBeforeKitKat(data);
                     }
                 }

@@ -3,9 +3,7 @@ package com.example.familyeducationhelp.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.text.Editable;
 import android.text.InputType;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -105,7 +103,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
                 break;
             case R.id.get_verify://点击获取验证码按钮
                 if (isCompletePrint){
-                    Log.d("content的值:",content);
                     SendMessageRequest messageRequest = new SendMessageRequest(content);
                     messageRequest.sendRequest();
                     messageRequest.setIsSendMessage(new SendMessageRequest.SendMessage() {
