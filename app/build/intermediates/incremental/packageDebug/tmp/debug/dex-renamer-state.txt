@@ -1,4 +1,4 @@
-#Thu Oct 24 20:12:45 CST 2019
+#Thu Oct 24 20:26:00 CST 2019
 base.0=F\:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
