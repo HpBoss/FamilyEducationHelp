@@ -9,7 +9,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/colorWhite"
-        android:text="退出当前账号"
+        android:textSize="18sp"
+        android:text="@string/log_out"
         android:textAllCaps="false"
         android:textColor="#DD0404"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -56,7 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
-            android:text="我的账号"
+            android:text="我的账户"
             android:textColor="@color/colorBlack"
             android:textSize="20sp" />
     </RelativeLayout>
@@ -65,7 +66,7 @@
         android:id="@+id/view2"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:background="@color/colorGray"
+        android:background="#E0DDDD"
         app:layout_constraintBottom_toBottomOf="@id/view_line"
         app:layout_constraintEnd_toEndOf="@+id/relativeLayout"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,7 +84,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.91" />
+        app:layout_constraintGuide_percent="0.93" />
 
     <android.support.constraint.Guideline
         android:id="@+id/view_line"

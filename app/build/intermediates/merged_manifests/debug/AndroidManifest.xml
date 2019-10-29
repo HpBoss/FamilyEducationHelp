@@ -21,7 +21,7 @@
 
     <!-- 基本模块 END -->
     <application
-        android:name="com.example.familyeducationhelp.ClassList.init_lc"
+        android:name="com.example.familyeducationhelp.ClassList.Init_lc"
         android:allowBackup="true"
         android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
         android:debuggable="true"

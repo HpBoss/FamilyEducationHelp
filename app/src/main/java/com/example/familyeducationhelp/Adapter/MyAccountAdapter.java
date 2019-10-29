@@ -4,13 +4,11 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.familyeducationhelp.Activity.MyAccountActivity;
 import com.example.familyeducationhelp.ClassList.MyAccountInformation;
@@ -46,15 +44,15 @@ public class MyAccountAdapter extends RecyclerView.Adapter<MyAccountAdapter.View
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         MyAccountInformation myAccountInformation = myAccountInformationList.get(i);
-        viewHolder.tv_name.setText(myAccountInformation.getName());
-        viewHolder.tv_content.setText(myAccountInformation.getContent());
-        viewHolder.icon_next.setImageResource(myAccountInformation.getNext());
+        viewHolder.tv_name.setText(myAccountInformation.getAccountName());
+        viewHolder.tv_content.setText(myAccountInformation.getAccountItemContent());
+        viewHolder.icon_next.setImageResource(myAccountInformation.getAccountNextImage());
         Bitmap bitmap = BitmapFactory.decodeFile("/sdcard/Android/data/com.example.familyeducationhelp/cache/output_image.jpg");
         if (bitmap != null) {
-            viewHolder.icon_image.setImageBitmap(myAccountInformation.getBitmap());
+            viewHolder.icon_image.setImageBitmap(myAccountInformation.getAccountBitmap());
             viewHolder.icon_image.setScaleType(ImageView.ScaleType.FIT_XY);
         }else {
-            viewHolder.icon_image.setImageResource(myAccountInformation.getImage());
+            viewHolder.icon_image.setImageResource(myAccountInformation.getAccountImage());
             viewHolder.icon_image.setScaleType(ImageView.ScaleType.FIT_XY);
         }
     }
@@ -81,9 +79,5 @@ public class MyAccountAdapter extends RecyclerView.Adapter<MyAccountAdapter.View
     public interface OnItemClickListener {
         void onItemClick(View view, int position);
     }
-
-
-
-
 
 }

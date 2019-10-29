@@ -8,8 +8,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 
 import com.example.familyeducationhelp.ClassList.BottomNavigationBar;
+import com.example.familyeducationhelp.Fragment.Mine;
 import com.example.familyeducationhelp.Fragment.home;
-import com.example.familyeducationhelp.Fragment.mine;
 import com.example.familyeducationhelp.R;
 
 /**
@@ -70,7 +70,7 @@ public class MainActivity extends BaseActivity {
         }else if(button_add != 0){
             //replaceFragment(new release);
         }else if(button_myself != 0){
-            replaceFragment(new mine());
+            replaceFragment(new Mine());
         }
     }
     //Fragment的更换

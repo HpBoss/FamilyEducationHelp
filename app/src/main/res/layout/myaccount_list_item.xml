@@ -35,10 +35,11 @@
 
     <ImageView
         android:id="@+id/myAccount_next"
-        android:layout_width="wrap_content"
+        android:layout_width="30dp"
         android:layout_height="wrap_content"
         android:src="@drawable/next"
         android:layout_alignParentRight="true"
+        android:padding="6dp"
         android:layout_centerVertical="true"/>
 
 </RelativeLayout>

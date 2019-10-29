@@ -34,6 +34,12 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="30dp" />
+
+        <!--<include layout="@layout/verifiaction_code"
+            android:id="@+id/verify_code_view"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="30dp"/>-->
     </LinearLayout>
     <TextView
         android:id="@+id/textCaptcha"

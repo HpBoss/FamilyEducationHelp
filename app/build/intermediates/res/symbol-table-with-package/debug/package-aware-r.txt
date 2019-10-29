@@ -165,6 +165,7 @@ attr dialogPreferredPadding
 attr dialogTheme
 attr displayOptions
 attr divider
+attr dividerColor
 attr dividerHorizontal
 attr dividerPadding
 attr dividerVertical
@@ -226,6 +227,7 @@ attr fontWeight
 attr framePosition
 attr gapBetweenBars
 attr goIcon
+attr gravityCoefficient
 attr height
 attr hideOnContentScroll
 attr homeAsUpIndicator
@@ -501,6 +503,14 @@ attr waveOffset
 attr wavePeriod
 attr waveShape
 attr waveVariesBy
+attr wheelDividerSize
+attr wheelGravity
+attr wheelItemCount
+attr wheelItemSize
+attr wheelOrientation
+attr wheelTextColor
+attr wheelTextColorCenter
+attr wheelTextSize
 attr windowActionBar
 attr windowActionBarOverlay
 attr windowActionModeOverlay
@@ -687,6 +697,8 @@ dimen abc_text_size_subhead_material
 dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
+dimen activity_horizontal_margin
+dimen activity_vertical_margin
 dimen badge_corner_radius
 dimen badge_height_padding
 dimen badge_text_size
@@ -769,6 +781,7 @@ dimen shifting_no_title_icon_container_width
 dimen shifting_no_title_icon_height
 dimen shifting_no_title_icon_width
 dimen shifting_width_custom_padding
+dimen size60
 dimen subtitle_corner_radius
 dimen subtitle_outline_width
 dimen subtitle_shadow_offset
@@ -922,6 +935,7 @@ drawable rectangle_button_light
 drawable release_time
 drawable return_input_phone
 drawable setting
+drawable sextype_woman
 drawable shape_point_normal
 drawable shape_point_selected
 drawable student_check
@@ -1048,10 +1062,21 @@ id flip
 id forever
 id get_verify
 id gone
+id gradeWheelPicker
 id graph
 id graph_wrap
 id group_divider
 id groups
+id guideline
+id guideline10
+id guideline2
+id guideline3
+id guideline4
+id guideline5
+id guideline6
+id guideline7
+id guideline8
+id guideline9
 id guideline_Listview
 id guideline_Listview_Top
 id guideline_headView
@@ -1059,10 +1084,13 @@ id headImage
 id head_view
 id home
 id homeAsUp
+id horizontal
 id icon
 id icon_group
 id icon_head
 id icon_time
+id identityConfirm
+id identityWheelPicker
 id ifRoom
 id ignore
 id image
@@ -1097,6 +1125,7 @@ id login_agree
 id media_actions
 id message
 id middle
+id mine_sexType
 id mirror
 id mode_default
 id mode_fixed
@@ -1114,6 +1143,7 @@ id myAccount_name
 id myAccount_next
 id myAccount_takePhoto
 id myAccount_takePic
+id myAccount_viewIcon
 id name
 id navigation_home
 id navigation_mine
@@ -1166,6 +1196,8 @@ id search_plate
 id search_src_text
 id search_voice_btn
 id select_dialog_listview
+id sexConfirm
+id sexWheelPicker
 id shifting_bottom_navigation_badge
 id shifting_bottom_navigation_container
 id shifting_bottom_navigation_icon
@@ -1237,11 +1269,17 @@ id uniform
 id up
 id useLogo
 id verify_code_view
+id vertical
 id vertical_line1
 id vertical_line2
 id vertical_line_gone
+id view
 id view2
+id view3
 id view4
+id view5
+id view6
+id view7
 id viewPager
 id view_line
 id visible
@@ -1290,8 +1328,11 @@ layout identity_choice
 layout input_verification
 layout login
 layout myaccount_dialog_layout
+layout myaccount_icon_dialog_layout
+layout myaccount_identity_dialog_layout
 layout myaccount_layout
 layout myaccount_list_item
+layout myaccount_sex_dialog_layout
 layout notification_action
 layout notification_action_tombstone
 layout notification_media_action
@@ -1379,6 +1420,7 @@ string library_roundedimageview_libraryWebsite
 string library_roundedimageview_licenseId
 string library_roundedimageview_repositoryLink
 string location_information
+string log_out
 string login_agree
 string menu_left_up
 string message
@@ -1838,4 +1880,5 @@ styleable Variant constraints region_heightLessThan region_heightMoreThan region
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
+styleable WheelView dividerColor gravityCoefficient wheelDividerSize wheelGravity wheelItemCount wheelItemSize wheelOrientation wheelTextColor wheelTextColorCenter wheelTextSize
 xml file_paths

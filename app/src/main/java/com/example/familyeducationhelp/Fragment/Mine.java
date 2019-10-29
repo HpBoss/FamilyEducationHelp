@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ListFragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,13 +18,12 @@ import android.widget.Toast;
 import com.example.familyeducationhelp.Activity.MyAccountActivity;
 import com.example.familyeducationhelp.R;
 
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class mine extends ListFragment implements View.OnClickListener{
+public class Mine extends ListFragment implements View.OnClickListener{
 
     private ListView lv;
     private SimpleAdapter adapter;
@@ -42,7 +40,7 @@ public class mine extends ListFragment implements View.OnClickListener{
         //参数四：表示由map中定义的key组成的字符串类型的数字  参数五：需要显示的控件id组成的的数组
         //保证参数四和参数五一一对应，否则控件属性会对换（张冠李戴）
         adapter = new SimpleAdapter(getActivity(), getData(images, names),
-                R.layout.setting_adapter_item, new String[] { "img", "name","next" },
+                R.layout.setting_adapter_item, new String[] { "img", "name","nextimage" },
                 new int[] { R.id.image, R.id.name, R.id.next });
         //继承了ListFragment后的方法
         setListAdapter(adapter);
@@ -53,7 +51,7 @@ public class mine extends ListFragment implements View.OnClickListener{
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_mine,container,false);
-        lv = view.findViewById(android.R.id.list);
+        lv = view.findViewById(android.R.id.list) ;
         imageView_head = view.findViewById(R.id.headImage);
         Bitmap bitmap = BitmapFactory.decodeFile("/sdcard/Android/data/com.example.familyeducationhelp/cache/output_image.jpg");
         if(bitmap != null){
@@ -86,7 +84,7 @@ public class mine extends ListFragment implements View.OnClickListener{
             Map<String, Object> map = new HashMap<String, Object>();
             map.put("img", images[i]);
             map.put("name", names[i]);
-            map.put("next", R.drawable.next);
+            map.put("nextimage", R.drawable.next);
             list.add(map);
         }
 
