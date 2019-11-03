@@ -12,7 +12,6 @@ import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
 
 /**
- * Created by Administrator on 2018/11/28.
  * 自定义圆角
  */
 

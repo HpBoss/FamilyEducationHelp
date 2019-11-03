@@ -27,4 +27,13 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
 
+    <Button
+        android:id="@+id/display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查询"
+        app:layout_constraintBottom_toBottomOf="@+id/mapView"
+        app:layout_constraintEnd_toEndOf="@+id/include2"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

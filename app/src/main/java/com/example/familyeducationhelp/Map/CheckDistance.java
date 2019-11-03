@@ -15,7 +15,7 @@ public class CheckDistance implements OnGetGeoCoderResultListener {
     private OnDistance mOnDistance = null;
     public interface OnDistance{
         void onDistanceValue(String x);
-        void onAddress(String location);
+//        void onAddress(String location);
     }
     public void getOnDistanceValue(OnDistance mOnDistance){
         this.mOnDistance = mOnDistance;

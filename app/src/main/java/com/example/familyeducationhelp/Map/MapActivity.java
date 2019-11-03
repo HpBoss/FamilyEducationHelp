@@ -1,13 +1,20 @@
 package com.example.familyeducationhelp.Map;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.graphics.Point;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.ZoomControls;
-
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
@@ -22,7 +29,10 @@ import com.baidu.mapapi.search.route.RoutePlanSearch;
 import com.baidu.mapapi.search.route.TransitRoutePlanOption;
 import com.example.familyeducationhelp.R;
 
-public class MapActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
+
+public class MapActivity extends AppCompatActivity implements View.OnClickListener {
     private MapView mMapView = null;
     private BaiduMap mBaiduMap = null;
     private LocationClient mLocationClient = null;
@@ -31,12 +41,13 @@ public class MapActivity extends AppCompatActivity {
     private RoutePlanSearch mSearch;
     private GeoCoder mGeoCoderA,mGeoCoderB;
     private CheckDistance mMcheckDistance = new CheckDistance();
+    private Button bt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-//        judgePermission();//6.0以后需要动态申请权限
+        judgePermission();//6.0以后需要动态申请权限
         initMap();
         setLocation();//初始化定位
     }
@@ -50,11 +61,22 @@ public class MapActivity extends AppCompatActivity {
         mMapView = findViewById(R.id.mapView);
         mBaiduMap = mMapView.getMap();
         mUiSettings = mBaiduMap.getUiSettings();
+        bt = findViewById(R.id.display);
+        bt.setOnClickListener(this);
         //隐藏百度logo
         View child = mMapView.getChildAt(1);
         if (child instanceof ImageView || child instanceof ZoomControls){
             child.setVisibility(View.GONE);
         }
+        WindowManager manager = this.getWindowManager();
+        final DisplayMetrics mMetrics = new DisplayMetrics();
+        manager.getDefaultDisplay().getMetrics(mMetrics);
+        mMapView.getMap().setOnMapLoadedCallback(new BaiduMap.OnMapLoadedCallback() {
+            @Override
+            public void onMapLoaded() {
+                mMapView.setZoomControlsPosition(new Point(mMetrics.widthPixels-mMapView.getScaleControlViewWidth()*5/4,mMetrics.heightPixels*2/3));
+            }
+        });
         /*
         MyLocationConfiguration
         NO.1：设置地图定位模式
@@ -86,20 +108,41 @@ public class MapActivity extends AppCompatActivity {
         //开启地图定位图层
         mLocationClient.start();
     }
+    protected void judgePermission() {
+        if (Build.VERSION.SDK_INT >= 23) {
+            // 检查该权限是否已经获取
+            // 权限是否已经 授权 GRANTED---授权  DINIED---拒绝
+            String[] permissions = new String[]{Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.READ_PHONE_STATE,Manifest.permission.ACCESS_COARSE_LOCATION,Manifest.permission.READ_EXTERNAL_STORAGE,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE};
+            List<String> mPermissionList = new ArrayList<>();
+            mPermissionList.clear();
+            for (String power : permissions
+            ) {
+                if (ContextCompat.checkSelfPermission(this,power) != PackageManager.PERMISSION_GRANTED){
+                    mPermissionList.add(power);
+                }
+            }
+            if (mPermissionList.size() >0){
+                ActivityCompat.requestPermissions(this, permissions, 100);
+            }
+        }else{
+            //做任何需要满足所有权限才能做的事情
+        }
+    }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.display:
+                PlanNode stNode = PlanNode.withCityNameAndPlaceName("成都", "四川师范大学成龙校区");
+                PlanNode enNode = PlanNode.withCityNameAndPlaceName("成都", "成都市第二人民医院");
+                mSearch.transitSearch((new TransitRoutePlanOption())
+                        .from(stNode)
+                        .to(enNode)
+                        .city("成都"));
 
-//    @Override
-//    public void onClick(View v) {
-//        switch (v.getId()){
-//            case R.id.display:
-//                PlanNode stNode = PlanNode.withCityNameAndPlaceName("成都", "四川师范大学成龙校区");
-//                PlanNode enNode = PlanNode.withCityNameAndPlaceName("成都", "成都市第二人民医院");
-//                mSearch.transitSearch((new TransitRoutePlanOption())
-//                        .from(stNode)
-//                        .to(enNode)
-//                        .city("成都"));
-//
-//                break;
+                break;
 //            case R.id.distances:
 //                mGeoCoderA.geocode(new GeoCodeOption()
 //                        .city("成都")// 城市
@@ -115,9 +158,9 @@ public class MapActivity extends AppCompatActivity {
 //                    }
 //                });
 //                break;
-//        }
-//
-//    }
+        }
+
+    }
 
 
 

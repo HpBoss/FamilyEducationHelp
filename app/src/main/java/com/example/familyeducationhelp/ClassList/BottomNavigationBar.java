@@ -345,8 +345,8 @@ public class BottomNavigationBar extends View {
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
         if (attrs != null) {
             TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.StyleBottomLayout);
-            itemIconTintRes = ta.getColorStateList(R.styleable.StyleBottomLayout_itemIconTint);
-            itemColorStateList = ta.getColorStateList(R.styleable.StyleBottomLayout_itemTextColor);
+            itemIconTintRes = ta.getColorStateList(R.styleable.StyleBottomLayout_itemIconTints);
+            itemColorStateList = ta.getColorStateList(R.styleable.StyleBottomLayout_itemTextColors);
 
             //字体颜色的改变
             if (itemIconTintRes == null) {

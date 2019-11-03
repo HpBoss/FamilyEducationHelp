@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="StyleBottomLayout">
-        <attr name="itemIconTint" format="reference"></attr>
-        <attr name="itemTextColor" format="reference"></attr>
+        <attr name="itemIconTints" format="reference"></attr>
+        <attr name="itemTextColors" format="reference"></attr>
         <attr name="floatingEnable" format="boolean">false</attr>
         <attr name="floatingUp" format="dimension"></attr>
         <attr name="menu" format="reference"></attr>
