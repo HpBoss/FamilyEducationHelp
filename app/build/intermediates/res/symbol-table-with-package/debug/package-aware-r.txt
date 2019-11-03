@@ -1296,6 +1296,7 @@ id background_style_static
 id barrier
 id beginning
 id blocking
+id bmapView
 id bottom
 id bottom_hint
 id bottom_line
@@ -1336,6 +1337,7 @@ id direct
 id disableHome
 id display
 id display_password
+id distance
 id divider
 id divider2
 id edit_query
@@ -1680,6 +1682,7 @@ layout activity_identity_choice
 layout activity_input_verification
 layout activity_login
 layout activity_main
+layout activity_mains
 layout activity_map
 layout activity_maps
 layout activity_myaccount_layout

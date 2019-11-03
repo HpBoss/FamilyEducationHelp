@@ -2,16 +2,14 @@ package com.example.familyeducationhelp.Map;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
-import android.graphics.Point;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.ZoomControls;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -39,14 +37,14 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
     private UiSettings mUiSettings = null;
     private MyOrientationListener myOrientationListener;
     private RoutePlanSearch mSearch;
+    private Button bt_check_route,bt_check_distance;
     private GeoCoder mGeoCoderA,mGeoCoderB;
     private CheckDistance mMcheckDistance = new CheckDistance();
-    private Button bt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_map);
+        setContentView(R.layout.activity_mains);
         judgePermission();//6.0以后需要动态申请权限
         initMap();
         setLocation();//初始化定位
@@ -58,25 +56,19 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
         mSearch = RoutePlanSearch.newInstance();
         mGeoCoderA.setOnGetGeoCodeResultListener(mMcheckDistance);
         mGeoCoderB.setOnGetGeoCodeResultListener(mMcheckDistance);
-        mMapView = findViewById(R.id.mapView);
+
+        bt_check_route = findViewById(R.id.display);
+        bt_check_distance = findViewById(R.id.distance);
+        bt_check_distance.setOnClickListener(this);
+        bt_check_route.setOnClickListener(this);
+        mMapView = findViewById(R.id.bmapView);
         mBaiduMap = mMapView.getMap();
         mUiSettings = mBaiduMap.getUiSettings();
-        bt = findViewById(R.id.display);
-        bt.setOnClickListener(this);
         //隐藏百度logo
         View child = mMapView.getChildAt(1);
         if (child instanceof ImageView || child instanceof ZoomControls){
             child.setVisibility(View.GONE);
         }
-        WindowManager manager = this.getWindowManager();
-        final DisplayMetrics mMetrics = new DisplayMetrics();
-        manager.getDefaultDisplay().getMetrics(mMetrics);
-        mMapView.getMap().setOnMapLoadedCallback(new BaiduMap.OnMapLoadedCallback() {
-            @Override
-            public void onMapLoaded() {
-                mMapView.setZoomControlsPosition(new Point(mMetrics.widthPixels-mMapView.getScaleControlViewWidth()*5/4,mMetrics.heightPixels*2/3));
-            }
-        });
         /*
         MyLocationConfiguration
         NO.1：设置地图定位模式
@@ -88,7 +80,7 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
         mBaiduMap.setMyLocationConfiguration(mConfiguration);
         mMapView.showScaleControl(false);//关闭比例尺
         mBaiduMap.setMyLocationEnabled(true);//打开图层
-        mSearch.setOnGetRoutePlanResultListener(new CheckTransitRoute(mBaiduMap));
+        mSearch.setOnGetRoutePlanResultListener(new checkTransitRoute(mBaiduMap));
         //方向传感器
         myOrientationListener = new MyOrientationListener(this);
     }
@@ -108,17 +100,18 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
         //开启地图定位图层
         mLocationClient.start();
     }
+    //6.0之后要动态获取权限，重要！！！
     protected void judgePermission() {
         if (Build.VERSION.SDK_INT >= 23) {
             // 检查该权限是否已经获取
             // 权限是否已经 授权 GRANTED---授权  DINIED---拒绝
-            String[] permissions = new String[]{Manifest.permission.ACCESS_FINE_LOCATION,
-                    Manifest.permission.READ_PHONE_STATE,Manifest.permission.ACCESS_COARSE_LOCATION,Manifest.permission.READ_EXTERNAL_STORAGE,
+            String[] permissions = new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    Manifest.permission.READ_PHONE_STATE, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.READ_EXTERNAL_STORAGE,
                     Manifest.permission.WRITE_EXTERNAL_STORAGE};
             List<String> mPermissionList = new ArrayList<>();
             mPermissionList.clear();
             for (String power : permissions
-            ) {
+                 ) {
                 if (ContextCompat.checkSelfPermission(this,power) != PackageManager.PERMISSION_GRANTED){
                     mPermissionList.add(power);
                 }
@@ -136,28 +129,28 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
         switch (v.getId()){
             case R.id.display:
                 PlanNode stNode = PlanNode.withCityNameAndPlaceName("成都", "四川师范大学成龙校区");
-                PlanNode enNode = PlanNode.withCityNameAndPlaceName("成都", "成都市第二人民医院");
+                PlanNode enNode = PlanNode.withCityNameAndPlaceName("成都", "春熙路");
                 mSearch.transitSearch((new TransitRoutePlanOption())
                         .from(stNode)
                         .to(enNode)
                         .city("成都"));
 
                 break;
-//            case R.id.distances:
-//                mGeoCoderA.geocode(new GeoCodeOption()
-//                        .city("成都")// 城市
-//                        .address("成都市第二人民医院")); // 地址
-//                mGeoCoderB.geocode(new GeoCodeOption()
-//                        .city("成都")
-//                        .address("四川师范大学成龙校区"));
-//                //输出A与B之间的直线距离
-//                mMcheckDistance.getOnDistanceValue(new CheckDistance.OnDistance() {
-//                    @Override
-//                    public void onDistanceValue(String x) {
-//                        Toast.makeText(MapActivity.this,x,Toast.LENGTH_LONG).show();
-//                    }
-//                });
-//                break;
+            case R.id.distance:
+                mGeoCoderA.geocode(new GeoCodeOption()
+                        .city("成都")// 城市
+                        .address("春熙路")); // 地址
+                mGeoCoderB.geocode(new GeoCodeOption()
+                        .city("成都")
+                        .address("四川师范大学成龙校区"));
+                //输出A与B之间的直线距离
+                mMcheckDistance.getOnDistanceValue(new CheckDistance.OnDistance() {
+                    @Override
+                    public void onDistanceValue(String x) {
+                        Toast.makeText(MapActivity.this,x, Toast.LENGTH_LONG).show();
+                    }
+                });
+                break;
         }
 
     }
@@ -202,5 +195,4 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
         mMapView = null;
         super.onDestroy();
     }
-
 }

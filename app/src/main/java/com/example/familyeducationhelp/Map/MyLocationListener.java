@@ -1,7 +1,5 @@
 package com.example.familyeducationhelp.Map;
 
-import android.widget.TextView;
-
 import com.baidu.location.BDAbstractLocationListener;
 import com.baidu.location.BDLocation;
 import com.baidu.mapapi.map.BaiduMap;
@@ -24,13 +22,13 @@ public class MyLocationListener extends BDAbstractLocationListener {
         this.mMyOrientationListener = mMyOrientationListener;
     }
 
-    @Override
+        @Override
         public void onReceiveLocation(BDLocation location) {
             //mapView 销毁后不再处理新接收的位置
             if (location == null || mMapView == null){
                 return;
             }
-            mMyOrientationListener.setOnOrientationListener(new MyOrientationListener.OnOrientationListener() {//重写接口，从而在当前类中实现方向传感器
+            mMyOrientationListener.setmOnOrientationListener(new MyOrientationListener.OnOrientationListener() {//重写接口，从而在当前类中实现方向传感器
                 @Override
                 public void onOrientationChanged(float x) {
                     mLastX = x;//赋值获取到的方向度数。

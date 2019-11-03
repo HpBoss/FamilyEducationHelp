@@ -21,11 +21,11 @@ public class MyOrientationListener implements SensorEventListener {
     private float[] accelerometerValues = new float[3];
     private float[] magneticFieldValues = new float[3];
 
-    public void setOnOrientationListener(OnOrientationListener mOnOrientationListener) {
+    public void setmOnOrientationListener(OnOrientationListener mOnOrientationListener) {
         this.mOnOrientationListener = mOnOrientationListener;
     }
 
-    MyOrientationListener(Context context) {
+    public MyOrientationListener(Context context) {
         this.mContext = context;
     }
  
@@ -39,7 +39,7 @@ public class MyOrientationListener implements SensorEventListener {
             // 初始化地磁场传感器
             magnetic = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
         }
- 
+
         if (accelerometer != null && null != magnetic) {//注册两种监听
             mSensorManager.registerListener(this,
                     accelerometer, Sensor.TYPE_ACCELEROMETER);
