@@ -102,19 +102,19 @@ public class MyAccountActivity extends BaseActivity{
     private void init_myAccount_information() {
         Bitmap bitmap = BitmapFactory.decodeFile("/sdcard/Android/data/com.example.familyeducationhelp/cache/output_image.jpg");
         if (bitmap != null) {
-            MyAccountInformation myAccountAdapter0 = new MyAccountInformation("头像",bitmap,"",R.drawable.next);
+            MyAccountInformation myAccountAdapter0 = new MyAccountInformation("头像",bitmap,"",R.drawable.ic_navigate_next_black_48dp);
             myAccountInformationList.add(myAccountAdapter0);
         }else {
-            MyAccountInformation myAccountAdapter1 = new MyAccountInformation("头像","",R.drawable.un_login_header,R.drawable.next);
+            MyAccountInformation myAccountAdapter1 = new MyAccountInformation("头像","",R.drawable.un_login_header,R.drawable.ic_navigate_next_black_48dp);
             myAccountInformationList.add(myAccountAdapter1);
         }
-        MyAccountInformation myAccountAdapter2 = new MyAccountInformation("用户名",null,"欧巴兽兽",R.drawable.next);
+        MyAccountInformation myAccountAdapter2 = new MyAccountInformation("用户名",null,"欧巴兽兽",R.drawable.ic_navigate_next_black_48dp);
         myAccountInformationList.add(myAccountAdapter2);
-        MyAccountInformation myAccountAdapter3 = new MyAccountInformation("账号密码",null,"未设置",R.drawable.next);
+        MyAccountInformation myAccountAdapter3 = new MyAccountInformation("账号密码",null,"未设置",R.drawable.ic_navigate_next_black_48dp);
         myAccountInformationList.add(myAccountAdapter3);
-        MyAccountInformation myAccountAdapter4 = new MyAccountInformation("手机号",null,"199****2664",R.drawable.next);
+        MyAccountInformation myAccountAdapter4 = new MyAccountInformation("手机号",null,"199****2664",R.drawable.ic_navigate_next_black_48dp);
         myAccountInformationList.add(myAccountAdapter4);
-        MyAccountInformation myAccountAdapter5 = new MyAccountInformation("地址",null,"xxx xxx xxx",R.drawable.next);
+        MyAccountInformation myAccountAdapter5 = new MyAccountInformation("地址",null,"xxx xxx xxx",R.drawable.ic_navigate_next_black_48dp);
         myAccountInformationList.add(myAccountAdapter5);
     }
 

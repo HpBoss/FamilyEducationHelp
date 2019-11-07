@@ -78,11 +78,10 @@ public class Home extends Fragment {
         suspend_layout = parentView.findViewById(R.id.suspend_layout);
         employ_information = parentView.findViewById(R.id.employ_information);
         textLocation = parentView.findViewById(R.id.tv_location);
-
         //这里不使用setCurrentItem，轮播图默认第一张图就是list集合里第一个添加的图片，
         //如果用户一开始就向右划，这时是划不动的，所以我们要初始化一个很大的起始位置，这是一个伪的无限循环
         //false表示在第一个子集元素滑动至第pictures.size()*100+1个子集元素时，没有滑动效果
-//        insertPoint();
+        //insertPoint();
         ////ReceyclerView初始化设置
         init_personal_information();
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());

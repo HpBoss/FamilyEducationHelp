@@ -31,10 +31,21 @@ anim design_snackbar_in
 anim design_snackbar_out
 anim dialog_in_anim
 anim dialog_out_anim
+anim fragment_close_enter
+anim fragment_close_exit
+anim fragment_fade_enter
+anim fragment_fade_exit
+anim fragment_fast_out_extra_slow_in
+anim fragment_open_enter
+anim fragment_open_exit
+anim rotate_down_to_up
+anim rotate_up_to_down
+anim translate_down_to_up
 anim translate_left_in
 anim translate_left_out
 anim translate_right_in
 anim translate_right_out
+anim translate_up_to_down
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -1130,6 +1141,8 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable circle_bt_bacground
+drawable circle_button
 drawable course_label
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
@@ -1141,23 +1154,22 @@ drawable display_password
 drawable ellipse_blue_background_shape
 drawable ellipse_white_background_shape
 drawable ellipse_yellow_background_shape
-drawable get_down
-drawable get_up
 drawable greater_symbol
 drawable hide_password
 drawable homepage
 drawable homepage_button
 drawable homepage_selected
 drawable hp
+drawable ic_chevron_left_black_48dp
+drawable ic_expand_less_black_32dp
+drawable ic_expand_more_black_32dp
 drawable ic_launcher_background
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_navigate_next_black_48dp
 drawable icon
 drawable icon_cny
-drawable icon_cny32
-drawable icon_cny48
-drawable icon_cny64
 drawable icon_delete
 drawable icon_female
 drawable icon_location
@@ -1184,7 +1196,6 @@ drawable myselfback
 drawable myselfbackground
 drawable navigation_empty_icon
 drawable news
-drawable next
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -1197,17 +1208,12 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
-drawable page1
-drawable page2
-drawable page3
-drawable page4
 drawable phone_number
 drawable please_input_verify
 drawable record
 drawable rectangle_button_dark
 drawable rectangle_button_light
 drawable release_time
-drawable return_input_phone
 drawable setting
 drawable shape_point_normal
 drawable shape_point_selected
@@ -1296,7 +1302,6 @@ id background_style_static
 id barrier
 id beginning
 id blocking
-id bmapView
 id bottom
 id bottom_hint
 id bottom_line
@@ -1306,6 +1311,7 @@ id bottom_navigation_bar_overLay
 id bt_nextStep
 id buttonPanel
 id cancel_action
+id cardView
 id center
 id center_horizontal
 id center_vertical
@@ -1317,6 +1323,7 @@ id clamp
 id clip_horizontal
 id clip_vertical
 id collapseActionView
+id constraintLayout
 id container
 id container_Layout
 id content
@@ -1338,8 +1345,8 @@ id disableHome
 id display
 id display_password
 id distance
-id divider
-id divider2
+id divider3
+id divider4
 id edit_query
 id edit_text_view
 id employ_information
@@ -1349,6 +1356,7 @@ id enterAlways
 id enterAlwaysCollapsed
 id exitCurrentAccount
 id exitUntilCollapsed
+id expandList
 id expand_activities_button
 id expanded_menu
 id fill
@@ -1362,19 +1370,23 @@ id fixed_bottom_navigation_container
 id fixed_bottom_navigation_icon
 id fixed_bottom_navigation_icon_container
 id fixed_bottom_navigation_title
+id floatingActionButton
 id forever
 id forget_password
+id fragment_container_view_tag
+id frequency
 id get_verify
 id ghost_view
 id gone
+id grade
 id group
 id group_divider
 id groups
 id guideline
 id guideline10
 id guideline11
+id guideline13
 id guideline14
-id guideline15
 id guideline16
 id guideline2
 id guideline3
@@ -1398,13 +1410,9 @@ id icon_time
 id ifRoom
 id image
 id imageView
-id imageView11
 id imageView12
 id imageView2
-id imageView3
 id imageView4
-id imageView5
-id imageView6
 id image_back
 id image_delete1
 id image_delete2
@@ -1450,6 +1458,7 @@ id mode_fixed
 id mode_fixed_no_title
 id mode_shifting
 id mode_shifting_no_title
+id money_symbol
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
@@ -1476,6 +1485,7 @@ id notification_main_column_container
 id off
 id on
 id on_fragment
+id otherRequest
 id outline
 id packed
 id parallax
@@ -1485,12 +1495,15 @@ id parent_matrix
 id password_login
 id percent
 id person_name
+id personal_avatar
 id pin
+id price
 id progress_circular
 id progress_horizontal
 id radio
 id recycleView
 id repeat
+id request_avater
 id right
 id right_icon
 id right_line
@@ -1517,6 +1530,7 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
+id sex
 id shifting_bottom_navigation_badge
 id shifting_bottom_navigation_container
 id shifting_bottom_navigation_icon
@@ -1540,9 +1554,11 @@ id src_in
 id src_over
 id standard
 id start
+id startTime
 id status_bar_latest_event_content
 id stretch
 id student_check
+id subject
 id submenuarrow
 id submit_area
 id suspend_layout
@@ -1563,19 +1579,6 @@ id textCaptcha
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
-id textView
-id textView10
-id textView11
-id textView12
-id textView13
-id textView2
-id textView3
-id textView4
-id textView5
-id textView6
-id textView7
-id textView8
-id textView9
 id text_employment
 id text_input_password_toggle
 id textinput_counter
@@ -1584,7 +1587,10 @@ id textinput_helper_text
 id time
 id title
 id titleDividerNoCustom
+id title_frequency
 id title_identity
+id title_otherRequest
+id title_startTime
 id title_template
 id title_verify
 id today_recommend
@@ -1608,9 +1614,11 @@ id tv_today_rm_gone
 id tv_two
 id unchecked
 id uniform
+id unit
 id unlabeled
 id up
 id useLogo
+id username
 id verify_code_view
 id view2
 id view3
@@ -1621,6 +1629,7 @@ id view7
 id viewPager
 id view_offset_helper
 id visible
+id visible_removing_fragment_view_tag
 id withText
 id wrap
 id wrap_content
@@ -1682,9 +1691,7 @@ layout activity_identity_choice
 layout activity_input_verification
 layout activity_login
 layout activity_main
-layout activity_mains
 layout activity_map
-layout activity_maps
 layout activity_myaccount_layout
 layout activity_wellcom
 layout banner_img_layout
@@ -1709,6 +1716,8 @@ layout dialog_myaccount_layout
 layout fixed_bottom_navigation_item
 layout fragment_home
 layout fragment_mine
+layout item_child
+layout item_father
 layout item_head_title
 layout item_myaccount_list
 layout item_personal_information
@@ -1791,6 +1800,7 @@ string icon_location
 string icon_location_indicator
 string input_bottom_hint
 string input_phone_edit
+string joson
 string library_roundedimageview_author
 string library_roundedimageview_authorWebsite
 string library_roundedimageview_isOpenSource
@@ -1840,6 +1850,7 @@ string verification_code
 string version
 string versionNum
 string vertical_line
+style ActivityAnimation
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
@@ -2393,6 +2404,8 @@ styleable FlowLayout itemSpacing lineSpacing
 styleable FontFamily fontProviderAuthority fontProviderCerts fontProviderFetchStrategy fontProviderFetchTimeout fontProviderPackage fontProviderQuery
 styleable FontFamilyFont android_font android_fontWeight android_fontStyle android_ttcIndex android_fontVariationSettings font fontStyle fontVariationSettings fontWeight ttcIndex
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
+styleable Fragment android_name android_id android_tag
+styleable FragmentContainerView android_name android_tag
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
 styleable LinearConstraintLayout android_orientation

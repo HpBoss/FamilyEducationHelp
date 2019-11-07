@@ -85,7 +85,7 @@ public class Mine extends ListFragment implements View.OnClickListener{
             Map<String, Object> map = new HashMap<String, Object>();
             map.put("img", images[i]);
             map.put("name", names[i]);
-            map.put("next", R.drawable.next);
+            map.put("next", R.drawable.ic_navigate_next_black_48dp);
             list.add(map);
         }
 
@@ -98,7 +98,7 @@ public class Mine extends ListFragment implements View.OnClickListener{
             case R.id.headImage:
                 Intent intent = new Intent(getActivity(), MyAccountActivity.class);
                 startActivity(intent);
-                getActivity().overridePendingTransition(R.anim.translate_right_in, R.anim.translate_left_out);
+//                getActivity().overridePendingTransition(R.anim.translate_right_in, R.anim.translate_left_out);
                 break;
             default:
                 break;

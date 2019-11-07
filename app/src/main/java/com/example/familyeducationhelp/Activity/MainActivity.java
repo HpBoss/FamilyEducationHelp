@@ -22,9 +22,7 @@ import java.util.List;
 /**
  * 使用了singleTask，使得每次返回MainActivity时，MainActivity都保持着跳转前的状态
  */
-
 public class MainActivity extends BaseActivity {
-    private BottomNavigationBar bottomView;
     private int button_homePage = 0;
     private int button_add = 0;
     private int button_myself = 0;
@@ -36,7 +34,7 @@ public class MainActivity extends BaseActivity {
         addStatusViewWithColor(this, Color.parseColor("#39C2D0"));
         replaceFragment(new Home());
         //底部导航栏
-        bottomView = findViewById(R.id.BottomLayout);
+        BottomNavigationBar bottomView = findViewById(R.id.BottomLayout);
         //底部按钮的信息
         bottomView.setMenu(R.menu.navigation_menu);
         //设置中间按钮可浮动

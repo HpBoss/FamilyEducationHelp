@@ -1,5 +1,7 @@
 package com.example.familyeducationhelp.Adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.familyeducationhelp.Activity.MainActivity;
 import com.example.familyeducationhelp.ClassList.PersonInformation;
+import com.example.familyeducationhelp.Map.MapActivity;
 import com.example.familyeducationhelp.R;
 import java.util.List;
 
@@ -20,7 +23,7 @@ public class PerInformationAdapter extends RecyclerView.Adapter<PerInformationAd
     private List<PersonInformation> mPersonInformationList;
     private View itemView;
     private RecyclerView mRv;
-    private boolean isCalculationRvHeight ;
+    private boolean isCalculationRvHeight;
 
     static class ViewHolder extends RecyclerView.ViewHolder{
         View perInformationView;
@@ -38,7 +41,7 @@ public class PerInformationAdapter extends RecyclerView.Adapter<PerInformationAd
         }
     }
 
-    public PerInformationAdapter(List<PersonInformation> personInformationList,RecyclerView recyclerView) {
+    public PerInformationAdapter(List<PersonInformation> personInformationList, RecyclerView recyclerView) {
         mPersonInformationList = personInformationList;
         mRv = recyclerView;
     }
@@ -51,7 +54,9 @@ public class PerInformationAdapter extends RecyclerView.Adapter<PerInformationAd
         holder.perInformationView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //学到了！！！怎样在Adapter中得到活动对象并执行活动代码
+                Intent intent = new Intent(view.getContext(), MapActivity.class);
+                view.getContext().startActivity(intent);
             }
         });
         return holder;

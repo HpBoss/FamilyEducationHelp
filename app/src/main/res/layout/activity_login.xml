@@ -41,7 +41,7 @@
             android:id="@+id/input_phone_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="1dp"
             android:orientation="horizontal">
             <!--+86文本-->
             <TextView
@@ -64,7 +64,6 @@
                 android:id="@+id/input_phone"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
                 android:layout_marginStart="10dp"
                 android:layout_weight="1"
                 android:background="@null"
@@ -88,7 +87,7 @@
                 android:layout_gravity="center_vertical"
                 android:contentDescription="@string/delete_all_num"
                 android:src="@drawable/icon_delete"
-                android:visibility="gone" />
+                android:visibility="visible" />
         </LinearLayout>
         <!--输入框下的横线-->
         <ImageView
@@ -107,19 +106,22 @@
             android:textColor="@color/colorGray"
             android:visibility="visible" />
         <!--        输入密码-->
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="2dp"
             android:orientation="horizontal">
 
+            <!--删除符号-->
             <EditText
                 android:id="@+id/input_login_key"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="8dp"
                 android:layout_weight="1"
+                android:autofillHints=""
                 android:background="@null"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
@@ -131,30 +133,42 @@
                 android:textSize="20sp"
                 android:theme="@style/MyEditText"
                 android:visibility="gone"
-                android:autofillHints="" tools:targetApi="o"/>
-            <!--删除符号-->
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/image_delete2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:targetApi="o" />
+
             <ImageView
                 android:id="@+id/image_delete2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="15dp"
+                android:layout_marginEnd="8dp"
                 android:contentDescription="@string/delete_all_num"
                 android:src="@drawable/icon_delete"
-                android:visibility="gone" />
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/display_password"
+                app:layout_constraintStart_toEndOf="@+id/input_login_key"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/display_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="5dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="1dp"
+                android:contentDescription="@string/todo"
                 android:src="@drawable/hide_password"
                 android:visibility="gone"
-                android:contentDescription="@string/todo" />
-        </LinearLayout>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/image_delete2"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ImageView
             android:id="@+id/bottom_line"
@@ -235,7 +249,7 @@
             android:id="@+id/agreement"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/login_agree"
+            android:layout_toEndOf="@id/login_agree"
             android:autoLink="all"
             android:text="@string/agreement"
             android:textColor="@color/colorYellow" />

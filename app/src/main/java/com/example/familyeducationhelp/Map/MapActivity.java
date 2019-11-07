@@ -5,9 +5,8 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ExpandableListView;
 import android.widget.ImageView;
-import android.widget.Toast;
 import android.widget.ZoomControls;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,46 +21,102 @@ import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.UiSettings;
 import com.baidu.mapapi.search.geocode.GeoCodeOption;
 import com.baidu.mapapi.search.geocode.GeoCoder;
-import com.baidu.mapapi.search.route.PlanNode;
 import com.baidu.mapapi.search.route.RoutePlanSearch;
-import com.baidu.mapapi.search.route.TransitRoutePlanOption;
 import com.example.familyeducationhelp.R;
+import com.example.familyeducationhelp.cardView.ChildData;
+import com.example.familyeducationhelp.cardView.FatherData;
+import com.example.familyeducationhelp.cardView.InformationBarAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MapActivity extends AppCompatActivity implements View.OnClickListener {
+public class MapActivity extends AppCompatActivity {
     private MapView mMapView = null;
     private BaiduMap mBaiduMap = null;
     private LocationClient mLocationClient = null;
     private UiSettings mUiSettings = null;
     private MyOrientationListener myOrientationListener;
     private RoutePlanSearch mSearch;
-    private Button bt_check_route,bt_check_distance;
+    private CheckDistance mCheckDistance;
     private GeoCoder mGeoCoderA,mGeoCoderB;
-    private CheckDistance mMcheckDistance = new CheckDistance();
+    private InformationBarAdapter mInformationBarAdapter;
+    private ExpandableListView mExpandableListView;
+    private ArrayList<FatherData> datas;
+    private MyString distance = new MyString("0");//初始化MyString
+    private boolean isFirstAdd = true;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mains);
-        judgePermission();//6.0以后需要动态申请权限
+        setContentView(R.layout.activity_map);
+//        judgePermission();//6.0以后需要动态申请权限
         initMap();
         setLocation();//初始化定位
+        initCardView();
+        setCardViewData();
+        setAdapter();
+    }
+    private void initLocation() {
+        mGeoCoderA.geocode(new GeoCodeOption()
+                .city("成都")// 城市
+                .address("龙泉驿万达广场")); // 地址
+        mGeoCoderB.geocode(new GeoCodeOption()
+                .city("成都")
+                .address("四川师范大学成龙校区"));
+        mCheckDistance.getOnDistanceValue(new CheckDistance.OnDistance() {
+            @Override
+            public void onDistanceValue(String x) {
+                if (isFirstAdd){
+                    distance.setStr(x);
+                    setAdapter();//distance属于datas的数据源，当获取他的值时，需要再次向Adapter传送数据
+                    isFirstAdd = false;
+                }
+            }
+        });
+    }
+
+    private void initCardView() {
+        mExpandableListView = findViewById(R.id.expandList);
+        mExpandableListView.setGroupIndicator(null);
+        mExpandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
+            @Override
+            public void onGroupExpand(int i) {
+                initLocation();//获取距离
+            }
+        });
+    }
+
+    private void setCardViewData() {
+       if (datas == null){
+           datas = new ArrayList<>();
+       }
+       FatherData fatherData = new FatherData(R.drawable.luosheng,"Lebron",R.drawable.icon_female,"三年级","语文","80");
+       ArrayList<ChildData> childDataArrayList = new ArrayList<>();
+        ChildData childData = new ChildData("2019年8月9日", "一周3次，一次2小时", "人必须长得帅，有教师资格证明，具有两年家教经验",
+                "武侯区中华名园二期", distance);
+       childDataArrayList.add(childData);
+       fatherData.setList(childDataArrayList);
+       datas.add(fatherData);
+    }
+
+    private void setAdapter() {
+        if (mInformationBarAdapter == null){
+            mInformationBarAdapter = new InformationBarAdapter(this,datas);
+            mExpandableListView.setAdapter(mInformationBarAdapter);
+        }else {
+            mInformationBarAdapter.flashData(datas);
+        }
     }
 
     private void initMap() {
         mGeoCoderA = GeoCoder.newInstance();
         mGeoCoderB = GeoCoder.newInstance();
+        mCheckDistance = new CheckDistance();
         mSearch = RoutePlanSearch.newInstance();
-        mGeoCoderA.setOnGetGeoCodeResultListener(mMcheckDistance);
-        mGeoCoderB.setOnGetGeoCodeResultListener(mMcheckDistance);
-
-        bt_check_route = findViewById(R.id.display);
-        bt_check_distance = findViewById(R.id.distance);
-        bt_check_distance.setOnClickListener(this);
-        bt_check_route.setOnClickListener(this);
-        mMapView = findViewById(R.id.bmapView);
+        mGeoCoderA.setOnGetGeoCodeResultListener(mCheckDistance);
+        mGeoCoderB.setOnGetGeoCodeResultListener(mCheckDistance);
+        mMapView = findViewById(R.id.mapView);
         mBaiduMap = mMapView.getMap();
         mUiSettings = mBaiduMap.getUiSettings();
         //隐藏百度logo
@@ -69,6 +124,8 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
         if (child instanceof ImageView || child instanceof ZoomControls){
             child.setVisibility(View.GONE);
         }
+        //设置地图缩放按钮位置
+        mMapView.getChildAt(2).setPadding(0,0,8,300);
         /*
         MyLocationConfiguration
         NO.1：设置地图定位模式
@@ -80,7 +137,7 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
         mBaiduMap.setMyLocationConfiguration(mConfiguration);
         mMapView.showScaleControl(false);//关闭比例尺
         mBaiduMap.setMyLocationEnabled(true);//打开图层
-        mSearch.setOnGetRoutePlanResultListener(new checkTransitRoute(mBaiduMap));
+        mSearch.setOnGetRoutePlanResultListener(new CheckTransitRoute(mBaiduMap));
         //方向传感器
         myOrientationListener = new MyOrientationListener(this);
     }
@@ -94,7 +151,7 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
         option.setScanSpan(1000);//必须大于一秒（1000毫秒）
         //设置locationClientOption
         mLocationClient.setLocOption(option);
-        MyLocationListener myLocationListener = new MyLocationListener(mBaiduMap,mMapView,myOrientationListener);
+        MyLocationListener myLocationListener = new MyLocationListener(mBaiduMap,mMapView,myOrientationListener,mSearch);
         //注册LocationListener监听器
         mLocationClient.registerLocationListener(myLocationListener);
         //开启地图定位图层
@@ -123,40 +180,6 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
             //做任何需要满足所有权限才能做的事情
         }
     }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.display:
-                PlanNode stNode = PlanNode.withCityNameAndPlaceName("成都", "四川师范大学成龙校区");
-                PlanNode enNode = PlanNode.withCityNameAndPlaceName("成都", "春熙路");
-                mSearch.transitSearch((new TransitRoutePlanOption())
-                        .from(stNode)
-                        .to(enNode)
-                        .city("成都"));
-
-                break;
-            case R.id.distance:
-                mGeoCoderA.geocode(new GeoCodeOption()
-                        .city("成都")// 城市
-                        .address("春熙路")); // 地址
-                mGeoCoderB.geocode(new GeoCodeOption()
-                        .city("成都")
-                        .address("四川师范大学成龙校区"));
-                //输出A与B之间的直线距离
-                mMcheckDistance.getOnDistanceValue(new CheckDistance.OnDistance() {
-                    @Override
-                    public void onDistanceValue(String x) {
-                        Toast.makeText(MapActivity.this,x, Toast.LENGTH_LONG).show();
-                    }
-                });
-                break;
-        }
-
-    }
-
-
-
     @Override
     protected void onStart() {
         myOrientationListener.star();

@@ -19,10 +19,11 @@ public class CheckDistance implements OnGetGeoCoderResultListener {
     public void getOnDistanceValue(OnDistance mOnDistance){
         this.mOnDistance = mOnDistance;
     }
+
     @Override
     public void onGetGeoCodeResult(GeoCodeResult geoCodeResult) {
+
         if (geoCodeResult == null || geoCodeResult.error != SearchResult.ERRORNO.NO_ERROR) {
-//            Toast.makeText(MapActivity.this, "抱歉，未能找到结果", Toast.LENGTH_LONG).show();
             return;
         }
         i++;
@@ -36,11 +37,9 @@ public class CheckDistance implements OnGetGeoCoderResultListener {
             Double metre,kilometre;
             metre = DistanceUtil.getDistance(startNode, endNode);
             kilometre = metre/1000;
-            DecimalFormat df = new DecimalFormat(".00");
+            DecimalFormat df = new DecimalFormat(".0");//距离保留一位小数
             String distance = String.valueOf(df.format(kilometre));
-            String finalDistance = "全程" + distance + "公里";
-            mOnDistance.onDistanceValue(finalDistance);
-//            Toast.makeText(MapActivity.this,finalDistance,Toast.LENGTH_LONG).show();
+            mOnDistance.onDistanceValue(distance);
         }
     }
 

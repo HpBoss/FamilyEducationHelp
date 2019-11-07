@@ -45,4 +45,5 @@
     <string name="version">1.0</string>
     <string name="todo">TODO</string>
     <string name="unit">元/小时</string>
+    <string name="joson">Joson</string>
 </resources>

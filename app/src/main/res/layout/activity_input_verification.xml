@@ -10,8 +10,8 @@
         android:contentDescription="@string/return_inputP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/return_input_phone"
-        android:layout_margin="20dp"/>
+        android:src="@drawable/ic_chevron_left_black_48dp"
+        android:layout_margin="8dp"/>
     <LinearLayout
         android:id="@+id/title_verify"
         android:layout_width="match_parent"

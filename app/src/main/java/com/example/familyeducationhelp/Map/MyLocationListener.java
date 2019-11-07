@@ -8,6 +8,9 @@ import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
+import com.baidu.mapapi.search.route.PlanNode;
+import com.baidu.mapapi.search.route.RoutePlanSearch;
+import com.baidu.mapapi.search.route.TransitRoutePlanOption;
 
 public class MyLocationListener extends BDAbstractLocationListener {
     private MyLocationData locData;
@@ -16,10 +19,12 @@ public class MyLocationListener extends BDAbstractLocationListener {
     private float mLastX;
     private boolean isFirstLoc = true;
     private MyOrientationListener mMyOrientationListener;
-    public MyLocationListener(BaiduMap map, MapView mapView, MyOrientationListener mMyOrientationListener){
+    private RoutePlanSearch mSearch;
+    public MyLocationListener(BaiduMap map, MapView mapView, MyOrientationListener mMyOrientationListener,RoutePlanSearch search){
         this.mBaiduMap = map;
         this.mMapView = mapView;
         this.mMyOrientationListener = mMyOrientationListener;
+        this.mSearch = search;
     }
 
         @Override
@@ -48,6 +53,13 @@ public class MyLocationListener extends BDAbstractLocationListener {
                 MapStatusUpdate u = MapStatusUpdateFactory.newLatLngZoom(ll,
                         f - 3);
                 mBaiduMap.animateMapStatus(u);
+                //规划路线
+                PlanNode stNode = PlanNode.withCityNameAndPlaceName("成都", "四川师范大学成龙校区");
+                PlanNode enNode = PlanNode.withCityNameAndPlaceName("成都", "龙泉驿万达广场");
+                mSearch.transitSearch((new TransitRoutePlanOption())
+                        .from(stNode)
+                        .to(enNode)
+                        .city("成都"));
             }
         }
     }

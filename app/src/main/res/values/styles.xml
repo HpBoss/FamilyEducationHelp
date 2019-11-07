@@ -1,15 +1,25 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorMainBlue</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <!--动画-->
+        <item name="android:windowAnimationStyle">@style/ActivityAnimation</item>
     </style>
 
+    <!--Activity进出切换页面动画-->
+    <style name="ActivityAnimation" parent="@android:style/Animation">
+        <item name="android:activityOpenEnterAnimation">@anim/translate_right_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/translate_left_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/translate_left_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/translate_right_out</item>
+
+    </style>
     <!--文本输入框颜色定义-->
-    <style name="MyEditText" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="MyEditText" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorControlNormal">@color/colorWhite</item>
         <item name="colorControlActivated">@color/colorYellow</item>
     </style>

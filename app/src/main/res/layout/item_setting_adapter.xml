@@ -20,17 +20,17 @@
         android:layout_height="wrap_content"
         android:textSize="20dp"
         android:textColor="@color/colorBlack"
-        android:layout_toRightOf="@+id/image"
+        android:layout_toEndOf="@id/image"
         android:text="消息中心"
         android:layout_centerInParent="true"
-        android:layout_marginLeft="12dp"/>
+        android:layout_marginStart="12dp" />
 
     <ImageView
         android:id="@+id/next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/next"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_navigate_next_black_48dp"
         android:layout_centerVertical="true"/>
 
 </RelativeLayout>

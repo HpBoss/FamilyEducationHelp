@@ -38,7 +38,7 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.familyeducationhelp.Map.MapActivity"
+            android:name="com.example.familyeducationhelp.Activity.MainActivity"
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -79,6 +79,14 @@
         </activity>
         <activity android:name="com.example.familyeducationhelp.Activity.BaseActivity" >
         </activity>
+        <activity android:name="com.example.familyeducationhelp.Map.MapActivity" >
+        </activity>
+
+        <provider
+            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+            android:authorities="com.example.familyeducationhelp.lifecycle-process"
+            android:exported="false"
+            android:multiprocess="true" />
     </application>
 
 </manifest>

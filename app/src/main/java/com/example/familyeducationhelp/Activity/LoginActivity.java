@@ -21,11 +21,12 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
     private EditText input_phoneN,input_login_key;
     private Button bt_getVerify;
     private TextView bottom_hint,password_login,forget_password;
-    private ImageView image_delete1,bottom_line,image_delete2,image_display;
+    private ImageView image_delete_phone,bottom_line,image_delete_password,image_display;
     private String content = "";
     private boolean isKey = true;
     private boolean isDisplay = true;
     private PhoneTextOnListener phoneTextOnListener;
+    private PasswordTextOnListener passwordTextOnListener;
     private boolean isCompletePrint = false;
 
     @Override
@@ -33,12 +34,13 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         addStatusViewWithColor(this, Color.parseColor("#39C2D0"));
-        init();
+        initView();
         setPhoneListener();
+        setPasswordListener();
     }
 
     private void setPhoneListener() {
-        phoneTextOnListener = new PhoneTextOnListener(input_phoneN,image_delete1);
+        phoneTextOnListener = new PhoneTextOnListener(input_phoneN,image_delete_phone);
         input_phoneN.addTextChangedListener(phoneTextOnListener);
         phoneTextOnListener.setIsNotEmpty(new PhoneTextOnListener.isNotEmpty() {
             @Override
@@ -47,7 +49,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
                 bt_getVerify.setBackgroundResource(R.drawable.rectangle_button_light);
                 isCompletePrint = true;
             }
-
             @Override
             public void setBackgroundDark() {
                 bt_getVerify.setBackgroundResource(R.drawable.rectangle_button_dark);
@@ -55,7 +56,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
         });
     }
 
-    private void init() {
+    private void initView() {
         image_display = findViewById(R.id.display_password);
         image_display.setOnClickListener(this);
         password_login = findViewById(R.id.password_login);
@@ -66,15 +67,34 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
         password_login.setOnClickListener(this);
         bt_getVerify = findViewById(R.id.get_verify);
         bt_getVerify.setOnClickListener(this);
-        image_delete1 = findViewById(R.id.image_delete1);
-        image_delete1.setOnClickListener(this);
-        image_delete2 = findViewById(R.id.image_delete2);
-        image_delete2.setOnClickListener(this);
+        image_delete_phone = findViewById(R.id.image_delete1);
+        image_delete_phone.setOnClickListener(this);
+        image_delete_password = findViewById(R.id.image_delete2);
+        image_delete_password.setOnClickListener(this);
         input_login_key = findViewById(R.id.input_login_key);
-        input_login_key.addTextChangedListener(new PasswordTextOnListener(image_delete2));
         bottom_line = findViewById(R.id.bottom_line);
         bottom_hint = findViewById(R.id.bottom_hint);
     }
+
+    private void setPasswordListener() {
+        passwordTextOnListener = new PasswordTextOnListener();
+        input_login_key.addTextChangedListener(passwordTextOnListener);
+        passwordTextOnListener.setIsExist(new PasswordTextOnListener.isExist() {
+            @Override
+            public void setAppear() {
+                image_delete_password.setVisibility(View.VISIBLE);
+                if (isCompletePrint){
+                    bt_getVerify.setBackgroundResource(R.drawable.rectangle_button_light);
+                }
+            }
+            @Override
+            public void setDisappear() {
+                image_delete_password.setVisibility(View.GONE);
+                bt_getVerify.setBackgroundResource(R.drawable.rectangle_button_dark);
+            }
+        });
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()){
@@ -88,6 +108,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
                     forget_password.setVisibility(View.VISIBLE);
                     image_display.setVisibility(View.VISIBLE);
                     input_login_key.setVisibility(View.VISIBLE);
+                    if (isCompletePrint){
+                        bt_getVerify.setBackgroundResource(R.drawable.rectangle_button_dark);
+                    }
                     isKey = false;
                 }else {
                     input_login_key.setVisibility(View.GONE);
@@ -96,13 +119,16 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
                     password_login.setText("密码登录");
                     forget_password.setVisibility(View.GONE);
                     input_login_key.setVisibility(View.GONE);
-                    image_delete2.setVisibility(View.GONE);
+                    image_delete_password.setVisibility(View.GONE);
                     image_display.setVisibility(View.GONE);
+                    if (isCompletePrint){
+                        bt_getVerify.setBackgroundResource(R.drawable.rectangle_button_light);
+                    }
                     isKey = true;
                 }
                 break;
             case R.id.get_verify://点击获取验证码按钮
-                if (isCompletePrint){
+                if (isCompletePrint && isKey){
                     SendMessageRequest messageRequest = new SendMessageRequest(content);
                     messageRequest.sendRequest();
                     messageRequest.setIsSendMessage(new SendMessageRequest.SendMessage() {
@@ -119,15 +145,15 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
                     Toast.makeText(LoginActivity.this,"没有成功输入",Toast.LENGTH_SHORT).show();
                 }
                 break;
-            case R.id.image_delete1://点击清空输入框按钮
+            case R.id.image_delete1://点击清空手机号按钮
                 input_phoneN.setText("");//清空手机号码输入框
                 phoneTextOnListener.setsLastLength(0);
-                image_delete1.setVisibility(View.GONE);
+                image_delete_phone.setVisibility(View.GONE);
                 bt_getVerify.setBackgroundResource(R.drawable.rectangle_button_dark);//点击右侧删除按钮后，获取验证码按钮背景变暗
                 break;
-            case R.id.image_delete2://点击清空输入框按钮
+            case R.id.image_delete2://点击清空密码按钮
                 input_login_key.setText("");//清空密码输入框
-                image_delete2.setVisibility(View.GONE);
+                image_delete_password.setVisibility(View.GONE);
                 break;
             case R.id.display_password://点击显示密码
                 if (isDisplay){

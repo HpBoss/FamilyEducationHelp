@@ -10,7 +10,7 @@
         android:id="@+id/navigation_release"
         android:icon="@drawable/add_button"
         app:floating="true"
-        android:title="发布"/>
+        android:title=""/>
     <item
         android:id="@+id/navigation_mine"
         android:icon="@drawable/myself_button"
