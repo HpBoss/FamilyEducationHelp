@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/please_input_verify">
+
+    <ImageView
+        android:id="@+id/iv_rt"
+        android:contentDescription="@string/return_inputP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/return_input_phone"
+        android:layout_margin="20dp"/>
+    <LinearLayout
+        android:id="@+id/title_verify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/please_input_verify"
+            android:textSize="35sp"
+            android:gravity="center"
+            android:textColor="@color/colorWhite" />
+
+        <com.example.familyeducationhelp.ClassList.VerificationCode
+            android:id="@+id/verify_code_view"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="30dp" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/textCaptcha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send_again"
+        android:layout_below="@id/title_verify"
+        android:textColor="@color/colorWhite"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"/>
+
+</RelativeLayout>
