@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.familyeducationhelp.Activity.MyAccountActivity;
 import com.example.familyeducationhelp.ClassList.MyAccountInformation;
 import com.example.familyeducationhelp.R;
 
@@ -20,12 +21,14 @@ import java.util.List;
 public class MyAccountAdapter extends RecyclerView.Adapter<MyAccountAdapter.ViewHolder>{
     private View itemView;
     private List<MyAccountInformation> myAccountInformationList = new ArrayList<>();
+    private MyAccountActivity mMyAccountActivity;
     private OnItemClickListener mClickListener;
 
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, final int i) {
         itemView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_myaccount_list,viewGroup,false);
         final ViewHolder holder = new ViewHolder(itemView);
+        mMyAccountActivity = new MyAccountActivity();
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,15 +45,15 @@ public class MyAccountAdapter extends RecyclerView.Adapter<MyAccountAdapter.View
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         MyAccountInformation myAccountInformation = myAccountInformationList.get(i);
-        viewHolder.tv_name.setText(myAccountInformation.getName());
-        viewHolder.tv_content.setText(myAccountInformation.getContent());
-        viewHolder.icon_next.setImageResource(myAccountInformation.getNext());
+        viewHolder.tv_name.setText(myAccountInformation.getAccountName());
+        viewHolder.tv_content.setText(myAccountInformation.getAccountItemContent());
+        viewHolder.icon_next.setImageResource(myAccountInformation.getAccountNextImage());
         Bitmap bitmap = BitmapFactory.decodeFile("/sdcard/Android/data/com.example.familyeducationhelp/cache/output_image.jpg");
         if (bitmap != null) {
-            viewHolder.icon_image.setImageBitmap(myAccountInformation.getBitmap());
+            viewHolder.icon_image.setImageBitmap(myAccountInformation.getAccountBitmap());
             viewHolder.icon_image.setScaleType(ImageView.ScaleType.FIT_XY);
         }else {
-            viewHolder.icon_image.setImageResource(myAccountInformation.getImage());
+            viewHolder.icon_image.setImageResource(myAccountInformation.getAccountImage());
             viewHolder.icon_image.setScaleType(ImageView.ScaleType.FIT_XY);
         }
     }
@@ -60,7 +63,7 @@ public class MyAccountAdapter extends RecyclerView.Adapter<MyAccountAdapter.View
         return myAccountInformationList.size();
     }
 
-     class ViewHolder extends RecyclerView.ViewHolder{
+    class ViewHolder extends RecyclerView.ViewHolder{
         TextView tv_name,tv_content;
         ImageView icon_image,icon_next;
         private ViewHolder(@NonNull View itemView) {
@@ -77,9 +80,5 @@ public class MyAccountAdapter extends RecyclerView.Adapter<MyAccountAdapter.View
     public interface OnItemClickListener {
         void onItemClick(View view, int position);
     }
-
-
-
-
 
 }

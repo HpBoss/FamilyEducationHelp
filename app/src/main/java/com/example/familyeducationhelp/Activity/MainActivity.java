@@ -1,8 +1,10 @@
 package com.example.familyeducationhelp.Activity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import androidx.core.app.ActivityCompat;
@@ -96,10 +98,13 @@ public class MainActivity extends BaseActivity {
         if(button_homePage != 0){
             replaceFragment(new Home());
         }else if(button_add != 0){
-            //replaceFragment(new release);
+            Intent intent = new Intent(this,ReleaseActivity.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.dialog_in_anim,R.anim.alpha_out);
         }else if(button_myself != 0){
             replaceFragment(new Mine());
         }
+
     }
     //Fragment的更换
     private void replaceFragment (Fragment fragment){
@@ -108,4 +113,5 @@ public class MainActivity extends BaseActivity {
         transaction.replace(R.id.on_fragment, fragment);
         transaction.commit();
     }
+
 }

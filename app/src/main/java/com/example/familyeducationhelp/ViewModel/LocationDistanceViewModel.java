@@ -1,4 +1,4 @@
-package com.example.familyeducationhelp.Data;
+package com.example.familyeducationhelp.ViewModel;
 
 import androidx.lifecycle.ViewModel;
 

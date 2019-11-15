@@ -71,6 +71,7 @@
         <activity android:name=".Map.MapActivity">
 
         </activity>
+        <activity android:name=".Activity.ReleaseActivity" />
     </application>
 
 </manifest>

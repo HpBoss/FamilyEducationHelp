@@ -30,10 +30,6 @@ public class BaseActivity extends AppCompatActivity {
             decorView.setSystemUiVisibility(option);
             getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
-        ActionBar actionbar = getSupportActionBar();
-        if(actionbar != null){
-            actionbar.hide();
-        }
     }
     /**
      * 重写回退键监听，添加返回活动切换动画
@@ -58,6 +54,7 @@ public class BaseActivity extends AppCompatActivity {
         }
         return super.dispatchTouchEvent(ev);
     }
+
     // 根据EditText所在坐标和用户点击的坐标相对比，来判断是否隐藏键盘
     private boolean isShouldHideKeyboard(View v, MotionEvent event) {
         if (v != null && (v instanceof EditText)) {

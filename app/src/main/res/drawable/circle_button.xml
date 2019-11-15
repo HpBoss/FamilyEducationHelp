@@ -4,7 +4,6 @@
     <size
         android:height="20dp"
         android:width="20dp">
-
     </size>
     <solid android:color="@color/colorMainBlue">
 

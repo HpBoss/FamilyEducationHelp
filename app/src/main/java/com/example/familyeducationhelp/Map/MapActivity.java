@@ -7,11 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.ZoomControls;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
@@ -44,7 +46,7 @@ public class MapActivity extends AppCompatActivity {
     private ArrayList<FatherData> datas;
     private MyString distance = new MyString("0");//初始化MyString
     private boolean isFirstAdd = true;
-
+    private TextView textTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,6 +121,8 @@ public class MapActivity extends AppCompatActivity {
         mMapView = findViewById(R.id.mapView);
         mBaiduMap = mMapView.getMap();
         mUiSettings = mBaiduMap.getUiSettings();
+        textTitle = findViewById(R.id.text_employment);
+        textTitle.setText("个人信息");
         //隐藏百度logo
         View child = mMapView.getChildAt(1);
         if (child instanceof ImageView || child instanceof ZoomControls){

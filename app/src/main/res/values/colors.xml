@@ -9,10 +9,21 @@
 <color name="colorWhiteGray">#E6E6E6</color>
 <color name="colorGray">#D3D3D3</color>
 <color name="colorBlack">#000000</color>
-<color name="colorRed">#ff0000</color>
+<color name="colorRed">#FF0000</color>
 <color name="colorBlue">#0BBFFF</color>
 <color name="colorMainBlue">#39C2D0</color>
 <color name="transparent">#00000000</color>
 <color name="translucent_white">#61FFFFFF</color>
 <color name="lightYellow">#FFFFBB33</color>
+<color name="deepYellow">#F7F709</color>
+<color name="shallowBlack">#424242</color>
+<color name="date_picker_divider">#11112233</color>
+
+<color name="date_picker_text_dark">#333333</color>
+
+<color name="main_bg">#F0F0F0</color>
+<color name="select_title_text">#B0B0B0</color>
+<color name="current_time_bg">#FFFFFF</color>
+<color name="current_time_text">#666666</color>
+<color name="selected_time_text">#39C2D0</color>
 </resources>

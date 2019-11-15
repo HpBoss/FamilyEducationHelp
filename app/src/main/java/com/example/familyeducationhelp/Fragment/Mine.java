@@ -26,10 +26,6 @@ import java.util.Map;
 
 public class Mine extends ListFragment implements View.OnClickListener{
 
-    private ListView lv;
-    private SimpleAdapter adapter;
-    private ImageView imageView_head;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,9 +36,9 @@ public class Mine extends ListFragment implements View.OnClickListener{
         //参数一：上下文对象  参数二：数据源List<Map<String,Object>> 参数三：item对应的布局文件
         //参数四：表示由map中定义的key组成的字符串类型的数字  参数五：需要显示的控件id组成的的数组
         //保证参数四和参数五一一对应，否则控件属性会对换（张冠李戴）
-        adapter = new SimpleAdapter(getActivity(), getData(images, names),
-                R.layout.item_setting_adapter, new String[] { "img", "name","next" },
-                new int[] { R.id.image, R.id.name, R.id.next });
+        SimpleAdapter adapter = new SimpleAdapter(getActivity(), getData(images, names),
+                R.layout.item_setting_adapter, new String[]{"img", "name", "next"},
+                new int[]{R.id.image, R.id.name, R.id.next});
         //继承了ListFragment后的方法
         setListAdapter(adapter);
 
@@ -52,8 +48,8 @@ public class Mine extends ListFragment implements View.OnClickListener{
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_mine,container,false);
-        lv = view.findViewById(android.R.id.list);
-        imageView_head = view.findViewById(R.id.headImage);
+//        lv = view.findViewById(android.R.id.list);
+        ImageView imageView_head = view.findViewById(R.id.headImage);
         Bitmap bitmap = BitmapFactory.decodeFile("/sdcard/Android/data/com.example.familyeducationhelp/cache/output_image.jpg");
         if(bitmap != null){
             imageView_head.setImageBitmap(bitmap);
