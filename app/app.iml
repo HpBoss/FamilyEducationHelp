@@ -169,5 +169,6 @@
     <orderEntry type="library" name="Gradle: org.litepal.android:java:3.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: org.litepal.android:core:3.0.0@aar" level="project" />
     <orderEntry type="module" module-name="gallery" />
+    <orderEntry type="module" module-name="gallery" />
   </component>
 </module>

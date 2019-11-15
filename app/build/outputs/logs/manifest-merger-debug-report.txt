@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:2:1-77:12
-INJECTED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:2:1-77:12
-INJECTED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:2:1-77:12
-INJECTED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:2:1-77:12
+ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:2:1-75:12
+INJECTED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:2:1-75:12
+INJECTED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:2:1-75:12
+INJECTED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:2:1-75:12
 MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] C:\Users\14506\.gradle\caches\transforms-2\files-2.1\22b7effb0d5baacdae37ddb4170aabf6\rxandroid-2.1.1\AndroidManifest.xml:15:1-20:12
 MERGED from [:gallery] F:\android_file\Daiso\V5\familyEducationHelp\gallery\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\14506\.gradle\caches\transforms-2\files-2.1\2946ca0ea6c89dab7d7d9fbc18e54292\material-1.0.0\AndroidManifest.xml:17:1-24:12
@@ -50,22 +50,22 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\User
 MERGED from [androidx.print:print:1.0.0] C:\Users\14506\.gradle\caches\transforms-2\files-2.1\d31a9dbc3f8404c541e987748c42963b\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\14506\.gradle\caches\transforms-2\files-2.1\699bc310780b1730bce8fe271ffeca8b\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [org.litepal.android:core:3.0.0] C:\Users\14506\.gradle\caches\transforms-2\files-2.1\a5c16a0af87565b6f51c9c445f9c27c3\jetified-core-3.0.0\AndroidManifest.xml:2:1-14:12
-INJECTED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:2:1-77:12
-INJECTED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:2:1-77:12
-INJECTED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:2:1-77:12
+INJECTED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:2:1-75:12
+INJECTED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:2:1-75:12
+INJECTED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:2:1-75:12
 	package
 		ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:4:5-46
 		INJECTED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml
 		INJECTED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml
-		ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:2:1-77:12
+		ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:2:1-75:12
 		INJECTED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml
 	xmlns:dist
 		ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:3:5-61
 	android:versionCode
 		INJECTED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml
-		ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:2:1-77:12
+		ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:2:1-75:12
 		INJECTED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:2:11-69
@@ -102,7 +102,7 @@ ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidMani
 	android:name
 		ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:20:22-78
 application
-ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:22:5-75:19
+ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:22:5-73:19
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\14506\.gradle\caches\transforms-2\files-2.1\2946ca0ea6c89dab7d7d9fbc18e54292\material-1.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\14506\.gradle\caches\transforms-2\files-2.1\2946ca0ea6c89dab7d7d9fbc18e54292\material-1.0.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\14506\.gradle\caches\transforms-2\files-2.1\508ac768b50158a079142e4dc4915061\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
@@ -203,22 +203,22 @@ activity#com.example.familyeducationhelp.Activity.LoginActivity
 ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:62:9-64:20
 	android:name
 		ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:62:19-57
-activity#com.example.familyeducationhelp.Activity.MyAccountActivity
+activity#com.example.familyeducationhelp.Activity.BaseActivity
 ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:65:9-67:20
 	android:name
-		ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:65:19-61
-activity#com.example.familyeducationhelp.Activity.BaseActivity
+		ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:65:19-56
+activity#com.example.familyeducationhelp.Map.MapActivity
 ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:68:9-70:20
 	android:name
-		ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:68:19-56
-activity#com.example.familyeducationhelp.Map.MapActivity
-ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:71:9-73:20
-	android:name
-		ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:71:19-50
+		ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:68:19-50
 activity#com.example.familyeducationhelp.Activity.ReleaseActivity
-ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:74:9-62
+ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:71:9-62
 	android:name
-		ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:74:19-59
+		ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:71:19-59
+activity#com.example.familyeducationhelp.Activity.MyAccountActivity
+ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:72:9-64
+	android:name
+		ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:72:19-61
 uses-sdk
 INJECTED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml

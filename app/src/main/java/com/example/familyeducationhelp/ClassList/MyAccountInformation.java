@@ -2,70 +2,64 @@ package com.example.familyeducationhelp.ClassList;
 
 import android.graphics.Bitmap;
 
-import org.litepal.crud.LitePalSupport;
+public class MyAccountInformation {
+    private String name;
+    private Bitmap bitmap;
+    private String content;
+    private int next;
+    private int image;
 
-public class MyAccountInformation extends LitePalSupport {
-    private String mAccountName;
-    private Bitmap mAccountBitmap;
-    private String mAccountItemContent;
-    private int mAccountNextImage;
-    private int mAccountImage;
-
-    public MyAccountInformation(){
-
+    public MyAccountInformation(String name, Bitmap bitmap, String content, int next) {
+        this.name = name;
+        this.bitmap = bitmap;
+        this.content = content;
+        this.next = next;
     }
 
-    public MyAccountInformation(String mAccountName, Bitmap mAccountBitmap, String mAccountContent, int mAccountImage) {
-        this.mAccountName = mAccountName;
-        this.mAccountBitmap = mAccountBitmap;
-        this.mAccountItemContent = mAccountContent;
-        this.mAccountNextImage = mAccountImage;
+    public MyAccountInformation(String name, String content, int image, int next) {
+        this.name = name;
+        this.content = content;
+        this.next = next;
+        this.image = image;
     }
 
-    public MyAccountInformation(String name, String content, int image, int nextImage) {
-        this.mAccountName = name;
-        this.mAccountItemContent = content;
-        this.mAccountNextImage = nextImage;
-        this.mAccountImage = image;
+    public String getName() {
+        return name;
     }
 
-    public String getAccountName() {
-        return mAccountName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setAccountName(String accountName) {
-        mAccountName = accountName;
+    public Bitmap getBitmap() {
+        return bitmap;
     }
 
-    public Bitmap getAccountBitmap() {
-        return mAccountBitmap;
+    public void setBitmap(Bitmap bitmap) {
+        this.bitmap = bitmap;
     }
 
-    public void setAccountBitmap(Bitmap accountBitmap) {
-        mAccountBitmap = accountBitmap;
+    public String getContent() {
+        return content;
     }
 
-    public String getAccountItemContent() {
-        return mAccountItemContent;
+    public void setContent(String content) {
+        this.content = content;
     }
 
-    public void setAccountItemContent(String accountItemContent) {
-        mAccountItemContent = accountItemContent;
+    public int getNext() {
+        return next;
     }
 
-    public int getAccountNextImage() {
-        return mAccountNextImage;
+    public void setNext(int next) {
+        this.next = next;
     }
 
-    public void setAccountNextImage(int accountNextImage) {
-        mAccountNextImage = accountNextImage;
+    public int getImage() {
+        return image;
     }
 
-    public int getAccountImage() {
-        return mAccountImage;
-    }
-
-    public void setAccountImage(int accountImage) {
-        mAccountImage = accountImage;
+    public void setImage(int image) {
+        this.image = image;
     }
 }

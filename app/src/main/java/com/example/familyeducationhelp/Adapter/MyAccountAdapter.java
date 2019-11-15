@@ -45,15 +45,15 @@ public class MyAccountAdapter extends RecyclerView.Adapter<MyAccountAdapter.View
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         MyAccountInformation myAccountInformation = myAccountInformationList.get(i);
-        viewHolder.tv_name.setText(myAccountInformation.getAccountName());
-        viewHolder.tv_content.setText(myAccountInformation.getAccountItemContent());
-        viewHolder.icon_next.setImageResource(myAccountInformation.getAccountNextImage());
+        viewHolder.tv_name.setText(myAccountInformation.getName());
+        viewHolder.tv_content.setText(myAccountInformation.getContent());
+        viewHolder.icon_next.setImageResource(myAccountInformation.getNext());
         Bitmap bitmap = BitmapFactory.decodeFile("/sdcard/Android/data/com.example.familyeducationhelp/cache/output_image.jpg");
         if (bitmap != null) {
-            viewHolder.icon_image.setImageBitmap(myAccountInformation.getAccountBitmap());
+            viewHolder.icon_image.setImageBitmap(myAccountInformation.getBitmap());
             viewHolder.icon_image.setScaleType(ImageView.ScaleType.FIT_XY);
         }else {
-            viewHolder.icon_image.setImageResource(myAccountInformation.getAccountImage());
+            viewHolder.icon_image.setImageResource(myAccountInformation.getImage());
             viewHolder.icon_image.setScaleType(ImageView.ScaleType.FIT_XY);
         }
     }
@@ -80,5 +80,9 @@ public class MyAccountAdapter extends RecyclerView.Adapter<MyAccountAdapter.View
     public interface OnItemClickListener {
         void onItemClick(View view, int position);
     }
+
+
+
+
 
 }
