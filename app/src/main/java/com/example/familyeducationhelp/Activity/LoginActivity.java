@@ -1,7 +1,11 @@
 package com.example.familyeducationhelp.Activity;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
@@ -12,10 +16,21 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
+import com.baidu.location.BDAbstractLocationListener;
+import com.baidu.location.BDLocation;
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
 import com.example.familyeducationhelp.ClassList.PasswordTextOnListener;
 import com.example.familyeducationhelp.ClassList.PhoneTextOnListener;
 import com.example.familyeducationhelp.ClassList.SendMessageRequest;
 import com.example.familyeducationhelp.R;
+import com.example.familyeducationhelp.database.DBUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class LoginActivity extends BaseActivity implements View.OnClickListener{
     private EditText input_phoneN,input_login_key;
@@ -26,7 +41,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
     private boolean isKey = true;
     private boolean isDisplay = true;
     private PhoneTextOnListener phoneTextOnListener;
-    private PasswordTextOnListener passwordTextOnListener;
     private boolean isCompletePrint = false;
 
     @Override
@@ -34,6 +48,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         addStatusViewWithColor(this, Color.parseColor("#39C2D0"));
+        judgePermission();
+        initLocationOption();
         initView();
         setPhoneListener();
         setPasswordListener();
@@ -56,6 +72,58 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
         });
     }
 
+    private void initLocationOption() {
+        //定位初始化
+        LocationClient locationClient = new LocationClient(getApplicationContext());
+        //通过LocationClientOption设置LocationClient相关参数
+        LocationClientOption option = new LocationClientOption();
+        option.setLocationMode(LocationClientOption.LocationMode.Hight_Accuracy);
+        option.setIsNeedAddress(true);
+        option.setIsNeedLocationDescribe(true);
+        option.setOpenGps(true); // 打开gps
+        option.setCoorType("gcj02"); // 设置坐标类型
+        option.setScanSpan(1000);//必须大于一秒（1000毫秒）
+        //设置locationClientOption
+        locationClient.setLocOption(option);
+        //注册LocationListener监听器
+        locationClient.registerLocationListener(listen);
+        //开启地图定位图层
+        locationClient.start();
+    }
+    BDAbstractLocationListener listen = new BDAbstractLocationListener() {
+        @Override
+        public void onReceiveLocation(BDLocation bdLocation) {
+            int count = bdLocation.getLocationDescribe().length();
+//            Log.d("location:",bdLocation.getLocationDescribe());
+            SharedPreferences.Editor editor = getSharedPreferences("address",MODE_PRIVATE).edit();
+            editor.putString("locationInformation",bdLocation.getLocationDescribe().substring(1,count-2));
+            editor.apply();
+            //159 0839 2578
+        }
+    };
+    //6.0之后要动态获取权限，重要！！！
+    protected void judgePermission() {
+        if (Build.VERSION.SDK_INT >= 23) {
+            // 检查该权限是否已经获取
+            // 权限是否已经 授权 GRANTED---授权  DINIED---拒绝
+            String[] permissions = new String[]{Manifest.permission.INTERNET,Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    Manifest.permission.READ_PHONE_STATE,Manifest.permission.ACCESS_COARSE_LOCATION,Manifest.permission.READ_EXTERNAL_STORAGE,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE};
+            List<String> mPermissionList = new ArrayList<>();
+            mPermissionList.clear();
+            for (String power : permissions
+            ) {
+                if (ContextCompat.checkSelfPermission(this,power) != PackageManager.PERMISSION_GRANTED){
+                    mPermissionList.add(power);
+                }
+            }
+            if (mPermissionList.size() >0){
+                ActivityCompat.requestPermissions(this, permissions, 100);
+            }
+        }else{
+            //做任何需要满足所有权限才能做的事情
+        }
+    }
     private void initView() {
         image_display = findViewById(R.id.display_password);
         image_display.setOnClickListener(this);
@@ -77,7 +145,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
     }
 
     private void setPasswordListener() {
-        passwordTextOnListener = new PasswordTextOnListener();
+        PasswordTextOnListener passwordTextOnListener = new PasswordTextOnListener();
         input_login_key.addTextChangedListener(passwordTextOnListener);
         passwordTextOnListener.setIsExist(new PasswordTextOnListener.isExist() {
             @Override
@@ -129,6 +197,14 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
                 break;
             case R.id.get_verify://点击获取验证码按钮
                 if (isCompletePrint && isKey){
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (DBUtils.registerUser(content)){
+                                Log.d("Register","成功！");
+                            }
+                        }
+                    }).start();
                     SendMessageRequest messageRequest = new SendMessageRequest(content);
                     messageRequest.sendRequest();
                     messageRequest.setIsSendMessage(new SendMessageRequest.SendMessage() {

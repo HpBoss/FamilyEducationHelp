@@ -32,7 +32,6 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        judgePermission();
         addStatusViewWithColor(this, Color.parseColor("#39C2D0"));
         replaceFragment(new Home());
         //底部导航栏
@@ -71,29 +70,7 @@ public class MainActivity extends BaseActivity {
 
         });
     }
-    //6.0之后要动态获取权限，重要！！！
-    protected void judgePermission() {
-        if (Build.VERSION.SDK_INT >= 23) {
-            // 检查该权限是否已经获取
-            // 权限是否已经 授权 GRANTED---授权  DINIED---拒绝
-            String[] permissions = new String[]{Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                    Manifest.permission.READ_PHONE_STATE,Manifest.permission.ACCESS_COARSE_LOCATION,Manifest.permission.READ_EXTERNAL_STORAGE,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE};
-            List<String> mPermissionList = new ArrayList<>();
-            mPermissionList.clear();
-            for (String power : permissions
-            ) {
-                if (ContextCompat.checkSelfPermission(this,power) != PackageManager.PERMISSION_GRANTED){
-                    mPermissionList.add(power);
-                }
-            }
-            if (mPermissionList.size() >0){
-                ActivityCompat.requestPermissions(this, permissions, 100);
-            }
-        }else{
-            //做任何需要满足所有权限才能做的事情
-        }
-    }
+
     private void loadFragment(int button_homePage, int button_add, int button_myself) {
         if(button_homePage != 0){
             replaceFragment(new Home());

@@ -1,13 +1,28 @@
 package com.example.familyeducationhelp.Activity;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
+import com.baidu.location.BDAbstractLocationListener;
+import com.baidu.location.BDLocation;
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
 import com.example.familyeducationhelp.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class WelcomeActivity extends BaseActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,5 +44,8 @@ public class WelcomeActivity extends BaseActivity {
                 overridePendingTransition(R.anim.translate_right_in, R.anim.translate_left_out);
             }
         }, 3000);//延迟3s
+
     }
+
+
 }

@@ -11,6 +11,7 @@
         android:targetSdkVersion="29" />
 
     <!-- 基本模块（必须）START -->
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <!-- 这个权限用于进行网络定位 -->
@@ -39,7 +40,7 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.familyeducationhelp.Activity.MainActivity"
+            android:name="com.example.familyeducationhelp.Activity.WelcomeActivity"
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -70,7 +71,7 @@
 
         <activity android:name="com.example.familyeducationhelp.Activity.VerificationActivity" >
         </activity>
-        <activity android:name="com.example.familyeducationhelp.Activity.WelcomeActivity" >
+        <activity android:name="com.example.familyeducationhelp.Activity.MainActivity" >
         </activity>
         <activity android:name="com.example.familyeducationhelp.Activity.IdentityActivity" >
         </activity>

@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Debug;
 import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
@@ -53,11 +54,13 @@ public class MapActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 //        judgePermission();//6.0以后需要动态申请权限
+        Debug.startMethodTracing("map");
         initMap();
         setLocation();//初始化定位
         initCardView();
         setCardViewData();
         setAdapter();
+        Debug.stopMethodTracing();
     }
     private void initLocation() {
         mGeoCoderA.geocode(new GeoCodeOption()
