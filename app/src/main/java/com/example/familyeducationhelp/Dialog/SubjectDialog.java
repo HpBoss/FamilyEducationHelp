@@ -14,7 +14,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 
 import com.example.familyeducationhelp.Adapter.SubjectAdapter;
-import com.example.familyeducationhelp.ClassList.SubjectData;
 import com.example.familyeducationhelp.R;
 
 public class SubjectDialog extends Dialog implements AdapterView.OnItemClickListener {
@@ -23,6 +22,7 @@ public class SubjectDialog extends Dialog implements AdapterView.OnItemClickList
     private Context mContext;
     private TextView confirmSubject;
     private updateSubjectListener mUpdateSubjectListener;
+    private GridView gridView;
 
     public SubjectDialog(@NonNull Context context, int themeResId,int position) {
         super(context, themeResId);
@@ -49,22 +49,23 @@ public class SubjectDialog extends Dialog implements AdapterView.OnItemClickList
         window.setWindowAnimations(R.style.main_menu_animStyle);
         //设置对话框大小
         window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        initView();
         setSubject(position);
+    }
 
+    private void initView() {
+        gridView = findViewById(R.id.gridView_subject);
+        confirmSubject = findViewById(R.id.confirm);
+        gridView.setOnItemClickListener(this);
     }
 
     private void setSubject(int position) {
-        GridView gridView = findViewById(R.id.gridView_subject);
-        gridView.setOnItemClickListener(this);
-        SubjectData subjectData = new SubjectData();
         if (subjectAdapter == null){
-            subjectAdapter = new SubjectAdapter(mContext,subjectData.iconSubjectShallow);
+            subjectAdapter = new SubjectAdapter(mContext,-1);//-1代表加载全部shallow背景，不做改变
         }else {
-            subjectData.iconSubjectShallow[position] = subjectData.iconSubjectDeep[position];
-            subjectAdapter = new SubjectAdapter(mContext,subjectData.iconSubjectShallow);
+            subjectAdapter = new SubjectAdapter(mContext,position);
         }
         gridView.setAdapter(subjectAdapter);
-        confirmSubject = findViewById(R.id.confirm);
     }
 
     @Override

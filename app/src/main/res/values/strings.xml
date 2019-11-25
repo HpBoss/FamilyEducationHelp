@@ -29,7 +29,6 @@
     <string name="subject">数学</string>
     <string name="money_unit">元/小时</string>
     <string name="price">80元/小时</string>
-    <string name="locating">定位中...</string>
     <string name="icon_location">位置图标</string>
     <string name="icon_location_indicator">位置指示图标</string>
     <string name="text_employment">招聘信息</string>
@@ -64,4 +63,6 @@
     <string name="day">日</string>
     <string name="hour">时</string>
     <string name="minute">分</string>
+    <string name="bottom_index">首页</string>
+    <string name="bottom_mine">我的</string>
 </resources>

@@ -57,7 +57,7 @@ public class ReleaseAdapter extends RecyclerView.Adapter<ReleaseAdapter.ViewHold
             for(String index : blueFont){
                 if (index.equals(releaseInformation.getSubject())){
                     holder.subject.setBackgroundResource(R.drawable.ellipse_blue_background_shape);
-                    holder.subject.setPadding(50,20,50,20);
+                    holder.subject.setPadding(40,15,40,15);
                     flag = true;
                 }
             }
@@ -65,7 +65,7 @@ public class ReleaseAdapter extends RecyclerView.Adapter<ReleaseAdapter.ViewHold
                 for (String index : yellowFont){
                     if (index.equals(releaseInformation.getSubject())){
                         holder.subject.setBackgroundResource(R.drawable.ellipse_yellow_background_shape);
-                        holder.subject.setPadding(50,20,50,20);
+                        holder.subject.setPadding(40,15,40,15);
                     }
                 }
             }

@@ -59,7 +59,7 @@ public class VerificationCode extends RelativeLayout {
                 inputContent = editText.getText().toString();//获取EditText中的内容
                 if(!inputContent.isEmpty()){
                     if(editable.length() == MAX){
-                        editText.removeTextChangedListener(this);
+//                        editText.removeTextChangedListener(this);这段代码应该注释：当输入验证码长度等于MAX时，再无法对editText作出改动
                         inputCompleteListener.inputComplete();//满足验证码位数是的操作
                     }else{
                         inputCompleteListener.invalidContent();//不满足时的操作

@@ -1,6 +1,7 @@
 package com.example.familyeducationhelp.Map;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -14,7 +15,6 @@ import android.widget.ZoomControls;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
@@ -25,10 +25,11 @@ import com.baidu.mapapi.map.UiSettings;
 import com.baidu.mapapi.search.geocode.GeoCodeOption;
 import com.baidu.mapapi.search.geocode.GeoCoder;
 import com.baidu.mapapi.search.route.RoutePlanSearch;
+import com.example.familyeducationhelp.Activity.MainActivity;
 import com.example.familyeducationhelp.R;
-import com.example.familyeducationhelp.cardView.ChildData;
-import com.example.familyeducationhelp.cardView.FatherData;
-import com.example.familyeducationhelp.cardView.InformationBarAdapter;
+import com.example.familyeducationhelp.MapCardView.ChildData;
+import com.example.familyeducationhelp.MapCardView.FatherData;
+import com.example.familyeducationhelp.MapCardView.InformationBarAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,20 +48,19 @@ public class MapActivity extends AppCompatActivity {
     private ArrayList<FatherData> datas;
     private MyString distance = new MyString("0");//初始化MyString
     private boolean isFirstAdd = true;
-    private TextView textTitle;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-//        judgePermission();//6.0以后需要动态申请权限
-        Debug.startMethodTracing("map");
+//        Debug.startMethodTracing("map");
         initMap();
         setLocation();//初始化定位
         initCardView();
         setCardViewData();
         setAdapter();
-        Debug.stopMethodTracing();
+//        Debug.stopMethodTracing();
     }
     private void initLocation() {
         mGeoCoderA.geocode(new GeoCodeOption()
@@ -82,6 +82,7 @@ public class MapActivity extends AppCompatActivity {
     }
 
     private void initCardView() {
+        ImageView btBack = findViewById(R.id.image_back);
         mExpandableListView = findViewById(R.id.expandList);
         mExpandableListView.setGroupIndicator(null);
         mExpandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
@@ -90,13 +91,27 @@ public class MapActivity extends AppCompatActivity {
                 initLocation();//获取距离
             }
         });
+        btBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                /**
+                 * overridePendingTransition(anim.1,anim.2);
+                 * anim.1是后者进入动画
+                 * anim.2是前者出去动画
+                 */
+                overridePendingTransition(R.anim.translate_left_in,R.anim.translate_right_out);
+                finish();
+            }
+        });
     }
 
     private void setCardViewData() {
        if (datas == null){
            datas = new ArrayList<>();
        }
-       FatherData fatherData = new FatherData(R.drawable.luosheng,"Lebron",R.drawable.icon_female,"三年级","语文","80");
+       FatherData fatherData = new FatherData(R.drawable.luosheng,"LeBron",R.drawable.icon_female,"三年级","语文","80");
        ArrayList<ChildData> childDataArrayList = new ArrayList<>();
         ChildData childData = new ChildData("2019年8月9日", "一周3次，一次2小时", "人必须长得帅，有教师资格证明，具有两年家教经验",
                 "武侯区中华名园二期", distance);
@@ -124,7 +139,7 @@ public class MapActivity extends AppCompatActivity {
         mMapView = findViewById(R.id.mapView);
         mBaiduMap = mMapView.getMap();
         mUiSettings = mBaiduMap.getUiSettings();
-        textTitle = findViewById(R.id.text_employment);
+        TextView textTitle = findViewById(R.id.text_employment);
         textTitle.setText("个人信息");
         //隐藏百度logo
         View child = mMapView.getChildAt(1);

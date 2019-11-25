@@ -53,16 +53,17 @@ public class Home extends Fragment {
         List<String> urlList;
         urlList = new ArrayList<>();
         //从网络上获取图片
-        urlList.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572005563666&di=e5383269e8671d614898f491a81d3860&imgtype=jpg&src=http%3A%2F%2Fimg0.imgtn.bdimg.com%2Fit%2Fu%3D881829500%2C4064685009%26fm%3D214%26gp%3D0.jpg");
-        urlList.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572005657823&di=25f97a188c0742a1549ac06f9b1c1f0b&imgtype=0&src=http%3A%2F%2Fdik.img.kttpdq.com%2Fpic%2F104%2F72302%2F5648964b6eda21cc.jpg");
-        urlList.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572005508147&di=514ae9ac15cf95a4c6350309a0d0027b&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F6%2F573d56b6782e1.jpg");
-        urlList.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572005508151&di=6fcff56de9c8a9b5f1af20c1dcfbd7d7&imgtype=0&src=http%3A%2F%2Fdik.img.kttpdq.com%2Fpic%2F104%2F72217%2F9e72b56c67105cdc.jpg");
+
+        urlList.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574613928635&di=2d4b09eb9080858e0899224297ca5e99&imgtype=0&src=http%3A%2F%2Fpx.thea.cn%2FPublic%2FUpload%2FUploadfiles%2Fimage%2F20190621%2F20190621224202_70068.jpg");
+        urlList.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574614382845&di=e660594abd440828e5eed2fc42bfee04&imgtype=0&src=http%3A%2F%2Fstatic.91huoke.com%2Fxxfl%2Fhk91%2Fcustomer%2F28243%2FQL0UfXeGyXinLEuXsoNjJiRYvb6hvl2rYGJ8Pao4.jpeg");
+        urlList.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574613804234&di=28167e9b0601aab701f1706ee5014af2&imgtype=0&src=http%3A%2F%2Fsup.user.img37.51sole.com%2Fimages3%2F20140707%2F1449690_20147716788.jpg");
+        urlList.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574613747439&di=8dba9b02874790ddd2e493c9a74b7623&imgtype=0&src=http%3A%2F%2Fpan.xici.com%2Fgroup4%2FM03%2F39%2F2B%2FrBABpltgMgKEHioFAAAAAC5kNqw282.jpg%2F1010");
         banner.initBanner(urlList,true)
                 .addPageMargin(16, 0)//参数1page之间的间距,参数2中间item距离边界的间距
                 .addPoint(4)//添加指示器
                 .addStartTimer(5)//自动轮播5秒间隔
                 .addPointBottom(2)//指示器离Banner底部的距离
-                .addRoundCorners(12)//圆角
+                .addRoundCorners(10)//圆角
                 .finishConfig()//加载布局
                 .addBannerListener(new BannerViewPager.OnClickBannerListener() {
                     @Override

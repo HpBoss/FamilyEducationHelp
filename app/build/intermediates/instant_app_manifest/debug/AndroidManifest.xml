@@ -40,7 +40,7 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.familyeducationhelp.Activity.WelcomeActivity"
+            android:name="com.example.familyeducationhelp.Activity.MainActivity"
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -71,7 +71,7 @@
 
         <activity android:name="com.example.familyeducationhelp.Activity.VerificationActivity" >
         </activity>
-        <activity android:name="com.example.familyeducationhelp.Activity.MainActivity" >
+        <activity android:name="com.example.familyeducationhelp.Activity.WelcomeActivity" >
         </activity>
         <activity android:name="com.example.familyeducationhelp.Activity.IdentityActivity" >
         </activity>

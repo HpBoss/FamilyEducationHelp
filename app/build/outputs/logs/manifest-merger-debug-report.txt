@@ -142,12 +142,12 @@ MERGED from [org.litepal.android:core:3.0.0] C:\Users\14506\.gradle\caches\trans
 		ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:29:9-40
 	android:name
 		ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:30:9-42
-activity#com.example.familyeducationhelp.Activity.WelcomeActivity
+activity#com.example.familyeducationhelp.Activity.MainActivity
 ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:31:9-38:20
 	android:screenOrientation
 		ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:32:13-49
 	android:name
-		ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:31:19-59
+		ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:31:19-56
 intent-filter#action:name:android.intent.action.MAIN+action:name:android.intent.action.VIEW+category:name:android.intent.category.LAUNCHER
 ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:33:13-37:29
 action#android.intent.action.MAIN
@@ -196,10 +196,10 @@ activity#com.example.familyeducationhelp.Activity.VerificationActivity
 ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:54:9-56:20
 	android:name
 		ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:54:19-64
-activity#com.example.familyeducationhelp.Activity.MainActivity
+activity#com.example.familyeducationhelp.Activity.WelcomeActivity
 ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:57:9-59:20
 	android:name
-		ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:57:19-56
+		ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:57:19-59
 activity#com.example.familyeducationhelp.Activity.IdentityActivity
 ADDED from F:\android_file\Daiso\V5\familyEducationHelp\app\src\main\AndroidManifest.xml:60:9-62:20
 	android:name

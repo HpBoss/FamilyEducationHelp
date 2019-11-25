@@ -84,7 +84,7 @@
                     android:layout_height="50dp"
                     android:background="@null"
                     android:gravity="top"
-                    android:hint="对家教老师具体的要求"
+                    android:hint="对家教老师具体的要求(选填)"
                     android:maxLines="2"
                     android:textSize="16sp" />
             </com.google.android.material.textfield.TextInputLayout>

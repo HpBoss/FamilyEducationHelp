@@ -16,6 +16,7 @@
 <color name="translucent_white">#61FFFFFF</color>
 <color name="lightYellow">#FFFFBB33</color>
 <color name="deepYellow">#F7F709</color>
+<color name="shallowYellow">#F0E68C</color>
 <color name="shallowBlack">#424242</color>
 <color name="date_picker_divider">#11112233</color>
 
@@ -26,4 +27,6 @@
 <color name="current_time_bg">#FFFFFF</color>
 <color name="current_time_text">#666666</color>
 <color name="selected_time_text">#39C2D0</color>
+<color name="subject_shallow_MPCB">#C3E9EC</color>
+<color name="subject_shallow_CEPHG">#FFE9C7</color>
 </resources>

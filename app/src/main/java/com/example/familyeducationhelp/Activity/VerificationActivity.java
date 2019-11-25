@@ -59,7 +59,7 @@ public class VerificationActivity extends BaseActivity implements View.OnClickLi
 
                     @Override
                     public void onError(Throwable throwable) {
-                        warning();
+                        warning(throwable);
                     }
 
                     @Override
@@ -72,11 +72,11 @@ public class VerificationActivity extends BaseActivity implements View.OnClickLi
             }
         });
     }
-    private void warning(){
-        Toast.makeText(this,verifyCode+" "+mobilePhone,Toast.LENGTH_LONG).show();
+    private void warning(Throwable throwable){
+        Toast.makeText(this,throwable.getMessage(),Toast.LENGTH_SHORT).show();
     }
     private void skip(){
-        Toast.makeText(VerificationActivity.this,"登录成功",Toast.LENGTH_LONG).show();
+//        Toast.makeText(VerificationActivity.this,"登录成功",Toast.LENGTH_SHORT).show();
         //验证输入完成之后软键盘自动收起
         InputMethodManager imm = (InputMethodManager) VerificationActivity.this.getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), 0);

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Debug;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -38,9 +39,11 @@ public class ReleaseActivity extends BaseActivity implements TextWatcher {
     private TextInputEditText mRequestEdit;
     private CharSequence tempChar;
     private Intent intent;
+    private TextView buttonRelease;
     private CustomDatePicker mDatePicker;
     private String[] littleTitle = {"科目","开始时间","上课频率","课时单价","其它要求"};
     private String[] subject = {"语文","数学","英语","物理","化学","生物","政治","历史","地理"};
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,8 +65,14 @@ public class ReleaseActivity extends BaseActivity implements TextWatcher {
         TextView cancel = findViewById(R.id.cancel);
         cancel.setVisibility(View.VISIBLE);
         recyclerView = findViewById(R.id.recy_information);
-        TextView buttonRelease = findViewById(R.id.bt_release);
+        buttonRelease = findViewById(R.id.bt_release);
         buttonRelease.setVisibility(View.VISIBLE);
+        buttonRelease.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //处理点击发布的事件
+            }
+        });
         mRequestEdit = findViewById(R.id.otherRequest);
         mRequestEdit.addTextChangedListener(this);
         intent = new Intent(this,MainActivity.class);
@@ -86,13 +95,14 @@ public class ReleaseActivity extends BaseActivity implements TextWatcher {
     }
     private void jumpMethod(){
         startActivity(intent);
+        finish();
         overridePendingTransition(R.anim.alpha_in,R.anim.dialog_out_anim);
     }
     //显示界面中心对话框
     private void alterDialogShow(){
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("你要放弃本次编辑吗？");
-        builder.setCancelable(true);
+        builder.setCancelable(false);
         builder.setPositiveButton("是", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -129,6 +139,20 @@ public class ReleaseActivity extends BaseActivity implements TextWatcher {
         }
         releaseAdapter = new ReleaseAdapter(mReleaseInformationList);
         recyclerView.setAdapter(releaseAdapter);
+        /** for循环和if条件判断语句
+         * 判断前五项信息是否填写完整
+         */
+        boolean isCompleteEmpty = true;
+        for (int i = 1;i < 4; i++){
+            if (mReleaseInformationList.get(i).getInformation().equals("")){
+                isCompleteEmpty = false;
+                break;
+            }
+        }
+        if (isCompleteEmpty){
+            buttonRelease.setBackgroundResource(R.drawable.ellipse_deepyellow_background_shape);
+        }
+
         releaseAdapter.setOnClickItems(new ReleaseAdapter.OnItemClickListener() {
             @Override
             public void onClickItem(int position) {
@@ -151,11 +175,7 @@ public class ReleaseActivity extends BaseActivity implements TextWatcher {
         switch (position){
             case 0:
                 int locationNum = searchNum(mReleaseInformationList);
-                if (subjectDialog == null){
-                    subjectDialog = new SubjectDialog(this,R.style.ReleaseDialog,locationNum);
-                }else {
-                    subjectDialog.setPosition(locationNum);
-                }
+                subjectDialog = new SubjectDialog(this,R.style.ReleaseDialog,locationNum);
                 subjectDialog.show();
                 subjectDialog.setUpdateSubjectListener(new SubjectDialog.updateSubjectListener() {
                     @Override
@@ -167,16 +187,6 @@ public class ReleaseActivity extends BaseActivity implements TextWatcher {
                 });
                 break;
             case 1:
-//                final DateDialog dateDialog = new DateDialog(this,R.style.ReleaseDialog);
-//                dateDialog.show();
-//                dateDialog.setUpdateDateListener(new DateDialog.updateDateListener() {
-//                    @Override
-//                    public void setUpdateDate(int year, int month, int day) {
-//                        dateDialog.dismiss();
-//                        mReleaseInformationList.get(1).setInformation(year + "年" + month + "月" + day + "日" );
-//                        setAdapter();
-//                    }
-//                });
                 mDatePicker.show(mReleaseInformationList.get(1).getInformation());
                 break;
             case 2:
@@ -185,7 +195,7 @@ public class ReleaseActivity extends BaseActivity implements TextWatcher {
                 frequencyDialog.setUpdateFrequencyListener(new FrequencyDialog.updateFrequencyListener() {
                     @Override
                     public void setUpdateFrequency(String count, String hour) {
-                        mReleaseInformationList.get(2).setInformation("一周" + count + "次，" + "一次" + hour + "小时");
+                        mReleaseInformationList.get(2).setInformation("一周" + count + "次/" + "一次" + hour + "小时");
                         frequencyDialog.dismiss();
                         setAdapter();
                     }
@@ -209,7 +219,7 @@ public class ReleaseActivity extends BaseActivity implements TextWatcher {
         long beginTimestamp = System.currentTimeMillis();
         long endTimestamp = DateFormatUtils.str2Long("3000-01-01", false);
 
-//        mReleaseInformationList.get(1).setInformation(DateFormatUtils.long2Str(beginTimestamp, false));
+        //mReleaseInformationList.get(1).setInformation(DateFormatUtils.long2Str(beginTimestamp, false));
         // 通过时间戳初始化日期，毫秒级别
         mDatePicker = new CustomDatePicker(this, new CustomDatePicker.Callback() {
             @Override
@@ -227,6 +237,7 @@ public class ReleaseActivity extends BaseActivity implements TextWatcher {
         // 不允许滚动动画
         mDatePicker.setCanShowAnim(false);
     }
+    //要求输入框内容监听
     @Override
     public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
         tempChar = charSequence;
