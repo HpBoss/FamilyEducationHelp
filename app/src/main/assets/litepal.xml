@@ -3,6 +3,6 @@
     <dbname value="MyAccountInformation"/>
     <version value="2"/>
     <list>
-        <mapping class="com.example.familyeducationhelp.ClassList.MyAccountInformation"/>
+        <mapping class="com.example.familyeducationhelp.classList.MyAccountInformation"/>
     </list>
 </litepal>

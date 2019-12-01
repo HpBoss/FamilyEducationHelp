@@ -4,8 +4,9 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Activity.MainActivity">
-
+    android:fitsSystemWindows="true"
+    tools:context=".activity.MainActivity">
+    <!--添加fitsSystemWindows="true"是为了避免将statusBar设置透明化后,内容抵到屏幕顶部,与statusBar重合-->
     <FrameLayout
         android:id="@+id/on_fragment"
         android:layout_width="match_parent"
@@ -20,7 +21,7 @@
 
     </FrameLayout>
 
-    <com.example.familyeducationhelp.ClassList.BottomNavigationBar
+    <com.example.familyeducationhelp.classList.BottomNavigationBar
         android:id="@+id/BottomLayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -33,5 +34,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/navigation_menu">
 
-    </com.example.familyeducationhelp.ClassList.BottomNavigationBar>
+    </com.example.familyeducationhelp.classList.BottomNavigationBar>
 </androidx.constraintlayout.widget.ConstraintLayout>

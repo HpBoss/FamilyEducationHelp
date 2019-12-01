@@ -33,7 +33,7 @@
     </LinearLayout>
 
 
-    <com.example.familyeducationhelp.ClassList.wheelpickerwidget.WheelView
+    <com.example.familyeducationhelp.classList.wheelpickerwidget.WheelView
         android:id="@+id/sexWheelPicker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

@@ -42,7 +42,7 @@
         <ExpandableListView
             android:id="@+id/expandList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:animateLayoutChanges="true"
             android:clickable="false"
             android:listSelector="#ffffff"
@@ -53,20 +53,14 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:adjustViewBounds="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:clickable="true"
-        android:cropToPadding="false"
-        android:duplicateParentState="false"
-        app:backgroundTint="#00BCD4"
-        app:fabSize="auto"
         app:layout_constraintBottom_toTopOf="@+id/guideline13"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:maxImageSize="32dp"
-        app:srcCompat="@drawable/circle_bt_bacground"
-        app:useCompatPadding="false" />
+        app:maxImageSize="36dp"
+        app:srcCompat="@drawable/accept" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline13"
@@ -75,5 +69,20 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.95" />
 
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/LocationCardView"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/floatingActionButton"
+        app:layout_constraintStart_toStartOf="parent">
 
+        <ImageView
+            android:id="@+id/ivLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_location" />
+
+    </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

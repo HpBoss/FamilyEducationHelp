@@ -44,7 +44,7 @@ dependencies {
     implementation 'com.ashokvarma.android:bottom-navigation-bar:2.0.5'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'com.makeramen:roundedimageview:2.2.1'
     implementation project(path: ':gallery')
     implementation files('libs/BaiduLBS_Android.jar')
@@ -53,4 +53,6 @@ dependencies {
     implementation 'org.litepal.android:java:3.0.0'
     implementation files('libs/mysql-connector-java-5.1.30-bin.jar')
     implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
+    implementation 'com.github.gittjy:LoadingDialog:1.0.2'
 }

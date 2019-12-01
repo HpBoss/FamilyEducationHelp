@@ -183,7 +183,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline10" />
 
-    <com.example.familyeducationhelp.ClassList.MyEditText
+    <com.example.familyeducationhelp.classList.MyEditText
         android:id="@+id/edit_text_view"
         android:layout_width="match_parent"
         android:layout_height="48dp"

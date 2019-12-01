@@ -37,14 +37,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.example.familyeducationhelp.ClassList.wheelpickerwidget.WheelView
+        <com.example.familyeducationhelp.classList.wheelpickerwidget.WheelView
             android:id="@+id/identityWheelPicker"
             style="@style/WheelDefault"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1.0" />
 
-        <com.example.familyeducationhelp.ClassList.wheelpickerwidget.WheelView
+        <com.example.familyeducationhelp.classList.wheelpickerwidget.WheelView
             android:id="@+id/gradeWheelPicker"
             style="@style/WheelDefault"
             android:layout_width="0dp"
