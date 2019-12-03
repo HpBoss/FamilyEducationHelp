@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -55,12 +54,59 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:strokeColor="@color/colorWhiteGray"
         app:strokeWidth="1dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linearLayout6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+                <TextView
+                    android:id="@+id/price60"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="50dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/interger_border_mainblue"
+                    android:gravity="center"
+                    android:text="60元"
+                    android:textColor="@color/colorMainBlue"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/price70"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="50dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/interger_border_mainblue"
+                    android:gravity="center"
+                    android:text="70元"
+                    android:textColor="@color/colorMainBlue"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/price80"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/interger_border_mainblue"
+                    android:gravity="center"
+                    android:text="80元"
+                    android:textColor="@color/colorMainBlue"
+                    android:textSize="18sp" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/textView_open"
@@ -70,7 +116,55 @@
                 android:text="手动输入"
                 android:textColor="@color/shallowBlack"
                 app:layout_constraintEnd_toStartOf="@+id/imageView5"
-                app:layout_constraintTop_toBottomOf="@+id/price140" />
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout7" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
+
+                <TextView
+                    android:id="@+id/price100"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="50dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/interger_border_mainblue"
+                    android:gravity="center"
+                    android:text="100元"
+                    android:textColor="@color/colorMainBlue"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/price120"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="50dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/interger_border_mainblue"
+                    android:gravity="center"
+                    android:text="120元"
+                    android:textColor="@color/colorMainBlue"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/price140"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/interger_border_mainblue"
+                    android:gravity="center"
+                    android:text="140元"
+                    android:textColor="@color/colorMainBlue"
+                    android:textSize="18sp" />
+            </LinearLayout>
 
             <ImageView
                 android:id="@+id/imageView5"
@@ -94,90 +188,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/price60"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
-                android:background="@drawable/interger_border_mainblue"
-                android:gravity="center"
-                android:text="60元"
-                android:textColor="@color/colorMainBlue"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-            <TextView
-                android:id="@+id/price70"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/interger_border_mainblue"
-                android:gravity="center"
-                android:text="70元"
-                android:textColor="@color/colorMainBlue"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="@+id/price60"
-                app:layout_constraintEnd_toStartOf="@+id/price80"
-                app:layout_constraintStart_toEndOf="@+id/price60"
-                app:layout_constraintTop_toTopOf="@+id/price60" />
-
-            <TextView
-                android:id="@+id/price80"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/interger_border_mainblue"
-                android:gravity="center"
-                android:text="80元"
-                android:textColor="@color/colorMainBlue"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="@+id/price70"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/price70" />
-
-            <TextView
-                android:id="@+id/price100"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/interger_border_mainblue"
-                android:gravity="center"
-                android:text="100元"
-                android:textColor="@color/colorMainBlue"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/price60" />
-
-            <TextView
-                android:id="@+id/price120"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/interger_border_mainblue"
-                android:gravity="center"
-                android:text="120元"
-                android:textColor="@color/colorMainBlue"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="@+id/price100"
-                app:layout_constraintEnd_toStartOf="@+id/price140"
-                app:layout_constraintStart_toEndOf="@+id/price100"
-                app:layout_constraintTop_toTopOf="@+id/price100" />
-
-            <TextView
-                android:id="@+id/price140"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/interger_border_mainblue"
-                android:gravity="center"
-                android:text="140元"
-                android:textColor="@color/colorMainBlue"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="@+id/price120"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/price120" />
-
-            <TextView
                 android:id="@+id/input_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -186,7 +196,7 @@
                 android:text="手动输入"
                 android:textColor="@color/colorBlack"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/price100" />
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout7" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout"
@@ -239,17 +249,6 @@
                 app:layout_constraintTop_toTopOf="@+id/textView_fold"
                 app:srcCompat="@drawable/ic_expand_less_black_32dp" />
 
-            <View
-                android:id="@+id/divider"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="16dp"
-                android:background="?android:attr/listDivider"
-                android:visibility="invisible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView_open" />
-
             <androidx.constraintlayout.widget.Group
                 android:id="@+id/group_input"
                 android:layout_width="wrap_content"
@@ -278,6 +277,20 @@
                 app:layout_constraintStart_toStartOf="@+id/textView_fold"
                 app:layout_constraintTop_toTopOf="@+id/textView_fold" />
 
+            <View
+                android:id="@+id/divider6"
+                android:layout_width="396dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="?android:attr/listDivider"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_open" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

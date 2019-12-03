@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/input_phone_backg">
+    android:background="@drawable/input_phone_back_light">
 
     <ImageView
         android:id="@+id/icon"
@@ -57,8 +56,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="5dp"
-                android:src="@drawable/phone_number"
-                android:contentDescription="@string/todo" />
+                android:contentDescription="@string/todo"
+                android:src="@drawable/phone_number" />
             <!--输入手机还文本框-->
             <EditText
                 android:id="@+id/input_phone"
@@ -66,6 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_weight="1"
+                android:autofillHints=""
                 android:background="@null"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
@@ -77,7 +77,7 @@
                 android:textColorHint="@color/colorGray"
                 android:textSize="20sp"
                 android:theme="@style/MyEditText"
-                android:autofillHints="" tools:targetApi="o" />
+                tools:targetApi="o" />
             <!--focusable、focusableInTouchMode属性为了截断进入页面输入框自动获取焦点-->
             <!--删除符号-->
             <ImageView
@@ -94,8 +94,8 @@
             android:id="@+id/first_below_line"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/input_below_line"
-            android:contentDescription="@string/todo" />
+            android:contentDescription="@string/todo"
+            android:src="@drawable/input_below_line" />
 
         <TextView
             android:id="@+id/bottom_hint"
@@ -103,7 +103,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
             android:text="@string/input_bottom_hint"
-            android:textColor="@color/colorGray"
+            android:textColor="@color/colorWhite"
             android:visibility="visible" />
         <!--        输入密码-->
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -175,9 +175,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:contentDescription="@string/todo"
             android:src="@drawable/input_below_line"
-            android:visibility="gone"
-            android:contentDescription="@string/todo" />
+            android:visibility="gone" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.Guideline

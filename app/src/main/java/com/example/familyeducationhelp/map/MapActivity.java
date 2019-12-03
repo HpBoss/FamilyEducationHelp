@@ -1,12 +1,16 @@
 package com.example.familyeducationhelp.map;
 
+import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ZoomControls;
+
+import androidx.interpolator.view.animation.FastOutLinearInInterpolator;
 
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
@@ -23,6 +27,7 @@ import com.example.familyeducationhelp.activity.MainActivity;
 import com.example.familyeducationhelp.mapCardView.ChildData;
 import com.example.familyeducationhelp.mapCardView.FatherData;
 import com.example.familyeducationhelp.mapCardView.InformationBarAdapter;
+import com.google.android.material.card.MaterialCardView;
 
 import java.util.ArrayList;
 
@@ -42,6 +47,9 @@ public class MapActivity extends BaseActivity {
     private boolean isFirstAdd = true;
     private Intent intent;
     private ImageView ivLocation;
+    private MaterialCardView mMaterialCardView;
+    private boolean isOpen = false;
+    private ImageView expand;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,8 +60,8 @@ public class MapActivity extends BaseActivity {
         initMap();
         setLocation();//初始化定位
         initCardView();
-        setCardViewData();
-        setAdapter();
+//        setCardViewData();
+//        setAdapter();
 //        Debug.stopMethodTracing();
     }
     private void initLocation() {
@@ -76,15 +84,16 @@ public class MapActivity extends BaseActivity {
     }
 
     private void initCardView() {
+        mMaterialCardView = findViewById(R.id.cardView);
         ImageView btBack = findViewById(R.id.image_back);
-        mExpandableListView = findViewById(R.id.expandList);
-        mExpandableListView.setGroupIndicator(null);
-        mExpandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
-            @Override
-            public void onGroupExpand(int i) {
-                initLocation();//获取距离
-            }
-        });
+//        mExpandableListView = findViewById(R.id.expandList);
+//        mExpandableListView.setGroupIndicator(null);
+//        mExpandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
+//            @Override
+//            public void onGroupExpand(int i) {
+//                initLocation();//获取距离
+//            }
+//        });
         btBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -99,8 +108,45 @@ public class MapActivity extends BaseActivity {
                 finish();
             }
         });
+        expand = findViewById(R.id.expand);
+        expand.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                expand.setImageResource(R.drawable.ic_expand_more_black_32dp);
+//                ConstraintLayout.LayoutParams linearParams =(ConstraintLayout.LayoutParams) mMaterialCardView.getLayoutParams();
+//                linearParams.height= ViewGroup.LayoutParams.WRAP_CONTENT;
+//                final float scale = getResources().getDisplayMetrics().density;
+//                ConstraintLayout childLayout = findViewById(R.id.childLayout);
+                int mixHeight = ((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 70, getResources().getDisplayMetrics()));
+                int maxHeight = ((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 235, getResources().getDisplayMetrics()));
+//                Log.d("height",String.valueOf(maxHeight));
+                if (!isOpen){
+//                    mMaterialCardView.setLayoutParams(linearParams);
+                    foldAnimator(mixHeight,maxHeight);
+                    expand.setImageResource(R.drawable.ic_expand_more_black_32dp);
+                    isOpen = true;
+                }else {
+                    //dp高度设置方法
+                    foldAnimator(maxHeight,mixHeight);
+                    expand.setImageResource(R.drawable.ic_expand_less_black_32dp);
+                    isOpen = false;
+                }
+            }
+        });
     }
-
+    private void foldAnimator(int startHeight,int endAnimator){
+        ValueAnimator va = ValueAnimator.ofInt(startHeight,endAnimator);
+        va.setInterpolator(new FastOutLinearInInterpolator());
+        va.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                mMaterialCardView.getLayoutParams().height = (int) valueAnimator.getAnimatedValue();
+                mMaterialCardView.requestLayout();
+            }
+        });
+        va.setDuration(300);
+        va.start();
+    }
     private void setCardViewData() {
        if (datas == null){
            datas = new ArrayList<>();
@@ -115,12 +161,13 @@ public class MapActivity extends BaseActivity {
     }
 
     private void setAdapter() {
-        if (mInformationBarAdapter == null){
-            mInformationBarAdapter = new InformationBarAdapter(this,datas);
-            mExpandableListView.setAdapter(mInformationBarAdapter);
-        }else {
-            mInformationBarAdapter.flashData(datas);
-        }
+//        if (mInformationBarAdapter == null){
+//            mInformationBarAdapter = new InformationBarAdapter(this,datas);
+//            mExpandableListView.setAdapter(mInformationBarAdapter);
+//        }else {
+//            mInformationBarAdapter.flashData(datas);
+//        }
+
     }
 
     private void initMap() {

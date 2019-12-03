@@ -7,10 +7,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.familyeducationhelp.R;
 import com.example.familyeducationhelp.classList.BottomNavigationBar;
 import com.example.familyeducationhelp.fragment.Home;
 import com.example.familyeducationhelp.fragment.Mine;
-import com.example.familyeducationhelp.R;
 
 /**
  * 使用了singleTask，使得每次返回MainActivity时，MainActivity都保持着跳转前的状态
@@ -57,7 +57,6 @@ public class MainActivity extends BaseActivity {
                         loadFragment(button_homePage,button_add,button_myself);
                     }
                 }
-
             }
         });
     }

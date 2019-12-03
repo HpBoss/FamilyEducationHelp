@@ -28,7 +28,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".classList.InitApp">
-        <activity android:name=".activity.MainActivity"
+        <activity android:name=".activity.WelcomeActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -54,7 +54,7 @@
         <activity android:name=".activity.VerificationActivity">
 
         </activity>
-        <activity android:name=".activity.WelcomeActivity">
+        <activity android:name=".activity.MainActivity">
 
         </activity>
         <activity android:name=".activity.IdentityActivity">

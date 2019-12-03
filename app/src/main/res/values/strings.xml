@@ -65,4 +65,7 @@
     <string name="minute">分</string>
     <string name="bottom_index">首页</string>
     <string name="bottom_mine">我的</string>
+    <string name="index">主页</string>
+    <string name="mine">我的</string>
+    <string name="release">发布</string>
 </resources>

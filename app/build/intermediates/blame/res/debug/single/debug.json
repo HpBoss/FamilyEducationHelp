@@ -28,20 +28,20 @@
         "source": "C:\\Users\\14506\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
-        "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_list_selector_holo_light.xml.flat",
-        "source": "C:\\Users\\14506\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable\\abc_list_selector_holo_light.xml"
-    },
-    {
         "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
         "source": "C:\\Users\\14506\\.gradle\\caches\\transforms-2\\files-2.1\\f01b27bb220ecb79298884ef36a7a2fb\\core-1.1.0\\res\\drawable-mdpi-v4\\notification_bg_low_normal.9.png"
     },
     {
-        "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\anim_btn_checkbox_to_checked_box_inner_merged_animation.xml.flat",
-        "source": "C:\\Users\\14506\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\anim\\btn_checkbox_to_checked_box_inner_merged_animation.xml"
+        "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_list_selector_holo_light.xml.flat",
+        "source": "C:\\Users\\14506\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable\\abc_list_selector_holo_light.xml"
     },
     {
         "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
         "source": "C:\\Users\\14506\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-hdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\anim_btn_checkbox_to_checked_box_inner_merged_animation.xml.flat",
+        "source": "C:\\Users\\14506\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\anim\\btn_checkbox_to_checked_box_inner_merged_animation.xml"
     },
     {
         "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_design_password_eye.xml.flat",
@@ -744,12 +744,16 @@
         "source": "C:\\Users\\14506\\.gradle\\caches\\transforms-2\\files-2.1\\f01b27bb220ecb79298884ef36a7a2fb\\core-1.1.0\\res\\drawable-hdpi-v4\\notification_bg_normal_pressed.9.png"
     },
     {
+        "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_location.png.flat",
+        "source": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\src\\main\\res\\drawable-hdpi\\ic_location.png"
+    },
+    {
         "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_identity_choice_rectangle.xml.flat",
         "source": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\src\\main\\res\\drawable\\identity_choice_rectangle.xml"
     },
     {
-        "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_location.png.flat",
-        "source": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\src\\main\\res\\drawable-hdpi\\ic_location.png"
+        "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_input_phone_back_light.png.flat",
+        "source": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\src\\main\\res\\drawable\\input_phone_back_light.png"
     },
     {
         "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_popup_exit.xml.flat",
@@ -1060,6 +1064,10 @@
         "source": "C:\\Users\\14506\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-xhdpi-v4\\abc_list_pressed_holo_dark.9.png"
     },
     {
+        "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\anim_nav_default_exit_anim.xml.flat",
+        "source": "C:\\Users\\14506\\.gradle\\caches\\transforms-2\\files-2.1\\e2b8d55c21bf220b4158bd6218544ec1\\jetified-navigation-ui-2.1.0\\res\\anim\\nav_default_exit_anim.xml"
+    },
+    {
         "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\14506\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
     },
@@ -1128,6 +1136,10 @@
         "source": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\src\\main\\res\\drawable-xxhdpi\\add_frequency.png"
     },
     {
+        "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\navigation_nav_graph.xml.flat",
+        "source": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\src\\main\\res\\navigation\\nav_graph.xml"
+    },
+    {
         "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_spinner.xml.flat",
         "source": "C:\\Users\\14506\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\color-v23\\abc_tint_spinner.xml"
     },
@@ -1174,6 +1186,10 @@
     {
         "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
         "source": "C:\\Users\\14506\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
+        "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\anim_nav_default_pop_exit_anim.xml.flat",
+        "source": "C:\\Users\\14506\\.gradle\\caches\\transforms-2\\files-2.1\\e2b8d55c21bf220b4158bd6218544ec1\\jetified-navigation-ui-2.1.0\\res\\anim\\nav_default_pop_exit_anim.xml"
     },
     {
         "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
@@ -1452,6 +1468,10 @@
         "source": "C:\\Users\\14506\\.gradle\\caches\\transforms-2\\files-2.1\\b64f80842d3d302e8b4275c4ce2e897c\\media-1.0.0\\res\\layout\\notification_template_media.xml"
     },
     {
+        "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\anim_nav_default_enter_anim.xml.flat",
+        "source": "C:\\Users\\14506\\.gradle\\caches\\transforms-2\\files-2.1\\e2b8d55c21bf220b4158bd6218544ec1\\jetified-navigation-ui-2.1.0\\res\\anim\\nav_default_enter_anim.xml"
+    },
+    {
         "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
         "source": "C:\\Users\\14506\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
@@ -1634,10 +1654,6 @@
     {
         "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\layout_srl_classics_footer.xml.flat",
         "source": "C:\\Users\\14506\\.gradle\\caches\\transforms-2\\files-2.1\\ee912c7619e1a96c2b0d9bb8b3c799cd\\jetified-SmartRefreshLayout-1.1.0\\res\\layout\\srl_classics_footer.xml"
-    },
-    {
-        "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\anim_alpha_disppear.xml.flat",
-        "source": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\src\\main\\res\\anim\\alpha_disppear.xml"
     },
     {
         "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
@@ -1928,6 +1944,10 @@
         "source": "C:\\Users\\14506\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\color\\abc_primary_text_material_light.xml"
     },
     {
+        "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu_nav.xml.flat",
+        "source": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\src\\main\\res\\menu\\menu_nav.xml"
+    },
+    {
         "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\14506\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
     },
@@ -2150,6 +2170,10 @@
     {
         "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_frequency.xml.flat",
         "source": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\src\\main\\res\\layout\\dialog_frequency.xml"
+    },
+    {
+        "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\anim_nav_default_pop_enter_anim.xml.flat",
+        "source": "C:\\Users\\14506\\.gradle\\caches\\transforms-2\\files-2.1\\e2b8d55c21bf220b4158bd6218544ec1\\jetified-navigation-ui-2.1.0\\res\\anim\\nav_default_pop_enter_anim.xml"
     },
     {
         "merged": "F:\\android_file\\Daiso\\V5\\familyEducationHelp\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_icon.xml.flat",
