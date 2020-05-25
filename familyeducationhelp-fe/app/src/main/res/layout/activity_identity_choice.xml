@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/identity_backg">
+
+    <TextView
+            android:id="@+id/title_identity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title_identity"
+            android:textColor="@color/colorWhite"
+            android:textSize="30sp"
+            android:layout_marginTop="80dp"
+            android:gravity="center"/>
+    <ImageView
+
+            android:layout_marginTop="30dp"
+            android:id="@+id/teacher_check"
+            android:layout_below="@+id/title_identity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/teacher_check"/>
+    <ImageView
+            android:id="@+id/student_check"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/teacher_check"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/student_check"/>
+    <Button
+            android:id="@+id/bt_nextStep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle_button_dark"
+            android:layout_below="@id/student_check"
+            android:layout_marginTop="60dp"
+            android:text="@string/next_step"
+            android:textColor="@color/colorMainBlue"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:textSize="20sp"/>
+</RelativeLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="familyeducationhelp/app" />
+      <module fileurl="file://$PROJECT_DIR$/familyeducationhelp.iml" filepath="$PROJECT_DIR$/familyeducationhelp.iml" group="familyeducationhelp" />
+      <module fileurl="file://$PROJECT_DIR$/gallery/gallery.iml" filepath="$PROJECT_DIR$/gallery/gallery.iml" group="familyeducationhelp/gallery" />
+    </modules>
+  </component>
+</project>

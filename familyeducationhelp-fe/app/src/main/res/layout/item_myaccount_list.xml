@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/recycle_view_selector">
+
+    <TextView
+            android:id="@+id/myAccount_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:text="@string/Head_portrait"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp"/>
+
+
+    <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/myAccount_image"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/myAccount_next"
+            app:riv_oval="true"/>
+
+
+    <TextView
+            android:id="@+id/myAccount_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/myAccount_next"
+            android:text="@string/user_name"
+            android:textSize="16sp"/>
+
+    <ImageView
+            android:id="@+id/myAccount_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="TODO"
+            app:srcCompat="@drawable/ic_navigate_next_black_48dp"/>
+
+</RelativeLayout>

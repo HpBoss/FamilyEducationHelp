@@ -1,0 +1,108 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorWhiteGray</item>
+        <item name="colorAccent">@color/colorMainBlue</item>
+        <!--动画-->
+        <item name="android:windowAnimationStyle">@style/ActivityAnimation</item>
+    </style>
+
+    <!--Activity进出切换页面动画-->
+    <style name="ActivityAnimation" parent="@android:style/Animation">
+        <item name="android:activityOpenEnterAnimation">@anim/translate_right_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/translate_left_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/translate_left_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/translate_right_out</item>
+
+    </style>
+
+    <!--文本输入框颜色定义-->
+    <style name="MyEditText" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorControlNormal">@color/colorWhite</item>
+        <item name="colorControlActivated">@color/colorYellow</item>
+    </style>
+
+    <style name="TextView_style">
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_width">41dp</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!--我的账号：Dialog的属性-->
+    <style name="DialogTheme" parent="@android:style/Theme.Dialog">
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/white</item>
+        <!-- 模糊 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 遮罩层 -->
+        <item name="android:backgroundDimAmount">0.5</item>
+    </style>
+    <!--我的账号：Dialog的属性-->
+    <style name="ReleaseDialog" parent="@android:style/Theme.Dialog">
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@drawable/bottom_dialog_alert</item>
+        <!-- 模糊 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 遮罩层 -->
+        <item name="android:backgroundDimAmount">0.5</item>
+    </style>
+
+    <!--我的账号，Dialog弹出动画-->
+    <style name="main_menu_animStyle">
+        <item name="android:windowEnterAnimation">@anim/dialog_in_anim</item>
+        <item name="android:windowExitAnimation">@anim/dialog_out_anim</item>
+    </style>
+
+    <!--WheelPicker-->
+    <style name="WheelDefault">
+        <item name="wheel_itemVisibleCount">5</item>
+        <item name="wheel_itemDefaultPosition">0</item>
+        <item name="wheel_itemAlign">center</item>
+        <item name="wheel_itemSpace">21dp</item>
+        <item name="wheel_itemTextColor">#FF999999</item>
+        <item name="wheel_itemTextColorSelected">#FF000000</item>
+        <item name="wheel_itemTextSize">19sp</item>
+        <item name="wheel_hasSameWidth">false</item>
+        <item name="wheel_atmospheric">true</item>
+        <item name="wheel_curtain">false</item>
+        <item name="wheel_curtainColor">#FFDEDEDE</item>
+        <item name="wheel_curved">false</item>
+        <item name="wheel_cyclic">false</item>
+        <item name="wheel_indicator">true</item>
+        <item name="wheel_indicatorColor">#FFDEDEDE</item>
+        <item name="wheel_indicatorSize">1dp</item>
+    </style>
+
+
+    <style name="date_picker_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+</resources>

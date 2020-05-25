@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+            android:id="@+id/navigation_home"
+            android:icon="@drawable/homepage_button"
+            android:title="首页"/>
+    <item
+            android:id="@+id/navigation_release"
+            android:icon="@drawable/add_button"
+            app:floating="true"
+            android:title="发布"/>
+    <item
+            android:id="@+id/navigation_mine"
+            android:icon="@drawable/myself_button"
+            android:title="我的"/>
+</menu>

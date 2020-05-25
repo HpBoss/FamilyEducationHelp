@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:dist="http://schemas.android.com/apk/distribution"
+          package="com.example.familyeducationhelp">
+
+    <!-- 基本模块（必须）START -->
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <!-- 访问网络，进行地图相关业务数据请求，包括地图数据，路线规划，POI检索等 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 获取网络状态，根据网络状态切换进行数据请求网络转换 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- 读取外置存储。如果开发者使用了so动态加载功能并且把so文件放在了外置存储区域，则需要申请该权限，否则不需要 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <!-- 写外置存储。如果开发者使用了离线地图，并且数据写在外置存储区域，则需要申请该权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- 基本模块 END -->
+    <application
+            android:icon="@mipmap/icon_feh"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/icon_feh"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme"
+            android:name=".application.BaseApplication">
+        <activity android:name=".activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.VerificationActivity"/>
+        <activity android:name=".activity.WelcomeActivity"/>
+        <activity android:name=".activity.IdentityActivity"/>
+        <activity android:name=".activity.LoginActivity"/>
+        <activity android:name=".activity.BaseActivity"/>
+        <activity android:name=".map.MapActivity"/>
+        <activity android:name=".activity.ReleaseActivity"/>
+        <activity android:name=".activity.MyAccountActivity"/>
+
+        <meta-data
+                android:name="com.baidu.lbsapi.API_KEY"
+                android:value="mXXufIIN1tG5NP7gOHoIDhFEUYpisN4X"/>
+        <service android:name="com.baidu.location.f"
+                 android:enabled="true"
+                 android:process=":remote"/>
+        <provider
+                android:authorities="com.example.familyeducationhelp.fileprovider"
+                android:name="androidx.core.content.FileProvider"
+                android:exported="false"
+                android:grantUriPermissions="true">
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/file_paths"/>
+        </provider>
+        <meta-data
+                android:name="design_width_in_dp"
+                android:value="450"/>
+    </application>
+
+</manifest>

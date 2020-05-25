@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content">
+
+    <TextView
+            android:id="@+id/frequency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="上课频率"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+            android:id="@+id/confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="确定"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+            android:id="@+id/week_frequency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:text="一周上课次数"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frequency"/>
+
+    <TextView
+            android:id="@+id/long_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:text="每次上课时长"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/week_frequency"/>
+
+    <ImageView
+            android:id="@+id/add_count"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/week_frequency"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.85"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/week_frequency"
+            app:srcCompat="@drawable/add_frequency"/>
+
+    <TextView
+            android:id="@+id/text_count"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/interger_border_24dp"
+            android:gravity="center"
+            android:text="0"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/add_count"
+            app:layout_constraintEnd_toStartOf="@+id/add_count"
+            app:layout_constraintTop_toTopOf="@+id/add_count"/>
+
+    <ImageView
+            android:id="@+id/reduce_count"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/text_count"
+            app:layout_constraintEnd_toStartOf="@+id/text_count"
+            app:layout_constraintTop_toTopOf="@+id/text_count"
+            app:srcCompat="@drawable/reduce_frequency"/>
+
+    <TextView
+            android:id="@+id/unit_count"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="4dp"
+            android:gravity="center"
+            android:text="次"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/add_count"
+            app:layout_constraintStart_toEndOf="@+id/add_count"
+            app:layout_constraintTop_toTopOf="@+id/add_count"/>
+
+    <ImageView
+            android:id="@+id/add_hour"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/long_time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.85"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/long_time"
+            app:srcCompat="@drawable/add_frequency"/>
+
+    <TextView
+            android:id="@+id/text_hour"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/interger_border_24dp"
+            android:gravity="center"
+            android:text="0"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/add_hour"
+            app:layout_constraintEnd_toStartOf="@+id/add_hour"
+            app:layout_constraintTop_toTopOf="@+id/add_hour"/>
+
+    <ImageView
+            android:id="@+id/reduce_hour"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/text_hour"
+            app:layout_constraintEnd_toStartOf="@+id/text_hour"
+            app:layout_constraintTop_toTopOf="@+id/text_hour"
+            app:srcCompat="@drawable/reduce_frequency"/>
+
+    <TextView
+            android:id="@+id/unit_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginStart="4dp"
+            android:gravity="center"
+            android:text="小时"
+            app:layout_constraintBottom_toBottomOf="@+id/add_hour"
+            app:layout_constraintStart_toEndOf="@+id/add_hour"
+            app:layout_constraintTop_toTopOf="@+id/add_hour"
+            tools:textSize="18sp"/>
+
+    <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="32dp"
+            android:background="@color/colorWhite"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/long_time"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
